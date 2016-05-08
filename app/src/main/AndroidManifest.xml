@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TermineActivity"></activity>
+        <activity android:name=".TermineActivity" />
+        <activity android:name=".InfosActivity"></activity>
     </application>
 
 </manifest>
