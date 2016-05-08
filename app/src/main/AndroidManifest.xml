@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".TermineActivity" />
         <activity android:name=".InfosActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
     </application>
 
 </manifest>

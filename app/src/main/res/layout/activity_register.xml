@@ -28,9 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrieren"
-        android:id="@+id/button_register"
+        android:id="@+id/button_r"
         android:layout_below="@+id/editText2"
         android:layout_alignParentStart="true"
         android:layout_marginStart="27dp"
         android:layout_marginTop="39dp" />
+
 </RelativeLayout>
