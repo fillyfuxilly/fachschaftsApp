@@ -1,0 +1,4 @@
+Applications Memory Usage (kB):
+Uptime: 10184172 Realtime: 10184172
+
+** MEMINFO in pid 5566 [com.android.sharedstoragebackup] **
