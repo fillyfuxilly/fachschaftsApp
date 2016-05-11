@@ -3,12 +3,15 @@
  */
 package fachschaftwirtschaft.fachschaftapp;
 
+
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -82,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                 } else startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                  /*  {
+                        DialogFragment newFragment = new RegisterDialogFragment();
+                        newFragment.show(getSupportFragmentManager(), "missiles");
+                    }*/
+
             }
 
 
