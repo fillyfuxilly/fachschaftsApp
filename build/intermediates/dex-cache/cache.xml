@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="306a9eeaabd1d495b5e3f39cd987734be03a593e">
-        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d7fd805ed9d44fced43912658a7e4f6f62038c8e/classes.dex" />
-    </item>
-
-</items>
+<items version="2" />
