@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrieren"
+        android:text="@string/reg"
         android:drawableStart="@android:drawable/ic_menu_save"
         android:id="@+id/button_r"
         android:layout_below="@+id/textView5"
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="82dp"
         android:layout_height="wrap_content"
-        android:text="Dein Name:"
+        android:text="@string/d_name"
         android:id="@+id/textView4"
         android:textSize="16sp"
         android:layout_below="@+id/textView6"
@@ -34,17 +34,18 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Registriere deinen Namen und deine Gruppe"
+        android:text="@string/reg_text"
         android:id="@+id/textView6"
         android:layout_marginTop="55dp"
         android:textSize="20sp"
         android:layout_below="@+id/textView7"
-        android:layout_alignStart="@+id/button_r" />
+        android:layout_alignStart="@+id/button_r"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Deine Gruppe:"
+        android:text="@string/d_gruppe"
         android:id="@+id/textView5"
         android:textSize="16sp"
         android:layout_below="@+id/textView4"
@@ -74,22 +75,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hallo und herzlich Willkommen zur Erstihelfer App der Fachschaft Wirtschaft! "
+        android:text="@string/welc1"
         android:id="@+id/textView8"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Diese App soll euch beim Einstieg in das Studium helfen, indem wir euch Informationen zu eurer Erstsemestereinführung bereitstellen."
+        android:text="@string/welc2"
         android:id="@+id/textView7"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_below="@+id/textView8"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="33dp"
+        android:gravity="center_horizontal" />
 
 </RelativeLayout>

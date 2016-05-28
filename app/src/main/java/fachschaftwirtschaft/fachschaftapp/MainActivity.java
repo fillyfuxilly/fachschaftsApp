@@ -4,8 +4,6 @@
 package fachschaftwirtschaft.fachschaftapp;
 
 
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,6 +11,9 @@ import android.os.AsyncTask;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         class RegisteredTask extends AsyncTask<Void,Void,Boolean> {
 
             @Override
@@ -46,23 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 if(result) {
                     setContentView(R.layout.activity_main);
 
-                    btn = (Button) findViewById(R.id.button_termine);
 
-                    btn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(MainActivity.this, TermineActivity.class));
-                        }
-                    });
-
-                    btn = (Button) findViewById(R.id.button_gr);
-
-                    btn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-                        }
-                    });
 
                     btn = (Button) findViewById(R.id.button_clear);
 
@@ -85,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(new Intent(MainActivity.this, InfosActivity.class));
                         }
                     });
+
+
+
                 } else startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-                  /*  {
-                        DialogFragment newFragment = new RegisterDialogFragment();
-                        newFragment.show(getSupportFragmentManager(), "missiles");
-                    }*/
+
 
             }
 
@@ -97,8 +83,27 @@ public class MainActivity extends AppCompatActivity {
         }new RegisteredTask().execute();
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.einstellungen) {
+            startActivity(new Intent(this, EinstellungenActivity.class));
 
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void startTermine (View button) {
+        startActivity(new Intent(this, TermineActivity.class));
+    }
 
 }
 
