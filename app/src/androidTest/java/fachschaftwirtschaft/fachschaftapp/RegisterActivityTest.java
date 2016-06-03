@@ -6,6 +6,8 @@ import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,32 +47,33 @@ public class RegisterActivityTest {
     public ActivityTestRule<RegisterActivity> mActivityRule = new ActivityTestRule<>(
             RegisterActivity.class);
 
+
+    @Before
+    public void before(){
+        Intents.init();
+    }
+    @After
+    public void after() {
+        Intents.release();
+    }
     @Test
     public void typeName() {
         onView(withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
         onView(withId(R.id.editText)).check(matches(withText("MatThias")));
     }
-
     @Test
     public void selectGroup() {
         onView(withId(R.id.spinner)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
         onView(withId(R.id.spinner)).check(matches(withSpinnerText(containsString("3"))));
     }
-
-
     @Test
     public void registerClick() {
         onView(withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
-
         onView(withId(R.id.spinner)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
-
-        Intents.init();
         onView(withId(R.id.button_r)).perform(click());
         intended(hasComponent(MainActivity.class.getName()), times(1));
-        Intents.release();
-
     }
 
 }
