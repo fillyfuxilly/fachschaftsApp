@@ -6,6 +6,8 @@ import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,21 +43,27 @@ public class MainActivityTest {
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
             MainActivity.class);
 
-    @Test
-    public void clickTermineButton() {
+
+    @Before
+    public void before() {
         Intents.init();
-        onView(withId(R.id.imageButton)).perform(click());
-        intended(hasComponent(TermineActivity.class.getName()), times(1));
-        intended(hasComponent(InfosActivity.class.getName()), times(0));
+    }
+
+    @After
+    public void after() {
         Intents.release();
     }
     @Test
+    public void clickTermineButton() {
+        onView(withId(R.id.imageButton)).perform(click());
+        intended(hasComponent(TermineActivity.class.getName()), times(1));
+        intended(hasComponent(InfosActivity.class.getName()), times(0));
+    }
+    @Test
     public void clickInfosButton() {
-        Intents.init();
         onView(withId(R.id.imageButton_infos)).perform(click());
         intended(hasComponent(TermineActivity.class.getName()), times(0));
         intended(hasComponent(InfosActivity.class.getName()), times(1));
-        Intents.release();
     }
 }
 
