@@ -1,3 +1,6 @@
+/**
+ * @Author Matthias Heinen
+ */
 package fachschaftwirtschaft.fachschaftapp;
 
 import android.app.Activity;
