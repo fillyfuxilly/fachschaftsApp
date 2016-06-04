@@ -21,6 +21,7 @@ import android.test.InstrumentationTestCase;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.Intents.intending;
 import static android.support.test.espresso.intent.Intents.times;
 import android.support.test.rule.ActivityTestRule;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -44,36 +45,33 @@ public class RegisterActivityTest {
 
 
     @Rule
-    public ActivityTestRule<RegisterActivity> mActivityRule = new ActivityTestRule<>(
-            RegisterActivity.class);
+    public ActivityTestRule<RegisterActivity> rule = new ActivityTestRule<>(RegisterActivity.class, true, false);
 
 
-    @Before
-    public void before(){
+    @Test
+    public void registerClick() {
         Intents.init();
-    }
-    @After
-    public void after() {
+        rule.launchActivity(new Intent());
+        onView(withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
+        onView(withId(R.id.spinner)).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
+        onView(withId(R.id.button_r)).perform(click());
+        intending(toPackage(MainActivity.class.getName()));
         Intents.release();
     }
+
     @Test
     public void typeName() {
+        rule.launchActivity(new Intent());
         onView(withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
         onView(withId(R.id.editText)).check(matches(withText("MatThias")));
     }
     @Test
     public void selectGroup() {
+        rule.launchActivity(new Intent());
         onView(withId(R.id.spinner)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
         onView(withId(R.id.spinner)).check(matches(withSpinnerText(containsString("3"))));
-    }
-    @Test
-    public void registerClick() {
-        onView(withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
-        onView(withId(R.id.spinner)).perform(click());
-        onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
-        onView(withId(R.id.button_r)).perform(click());
-        intended(hasComponent(MainActivity.class.getName()), times(1));
     }
 
 }
