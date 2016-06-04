@@ -27,6 +27,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+
+        btn = (Button) findViewById(R.id.button_clear);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+                SharedPreferences.Editor e = sharedpreferences.edit();
+                e.clear();
+                e.apply();
+                Toast.makeText(MainActivity.this,"Daten gelöscht", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        ibtn = (ImageButton) findViewById(R.id.imageButton_infos);
+
+        ibtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, InfosActivity.class));
+            }
+        });
+
+
+
 
         class RegisteredTask extends AsyncTask<Void,Void,Boolean> {
 
@@ -46,34 +74,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean result) {
                 if(result) {
-                    setContentView(R.layout.activity_main);
-
-
-
-                    btn = (Button) findViewById(R.id.button_clear);
-
-                    btn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor e = sharedpreferences.edit();
-                            e.clear();
-                            e.apply();
-                            Toast.makeText(MainActivity.this,"Daten gelöscht", Toast.LENGTH_LONG).show();
-                        }
-                    });
-
-                    ibtn = (ImageButton) findViewById(R.id.imageButton_infos);
-
-                    ibtn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(MainActivity.this, InfosActivity.class));
-                        }
-                    });
-
-
-
                 } else startActivity(new Intent(MainActivity.this, RegisterActivity.class));
 
 
