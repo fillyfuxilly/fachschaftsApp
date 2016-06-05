@@ -1,2 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/net.sourceforge.kobjects/kobjects-j2me/0.0-SNAPSHOT-20040926-2/9246ca92b16c65114a7fb80b906801e06be95305/kobjects-j2me-0.0-SNAPSHOT-20040926-2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9246ca92b16c65114a7fb80b906801e06be95305">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/kobjects-j2me-0.0-SNAPSHOT-20040926-2_b51ecbdbb539a07ddd0ce4e2410cccea306845b5.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d4c936aa8c7d2522c82e3f1829c791d9e367f009">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.2.0_c86a69b28436fb2e6c996f09185789fddfa0d713.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/com.google.code.ksoap2-android/ksoap2-j2se/3.6.0/e4733a185d549446527620772469361756457052/ksoap2-j2se-3.6.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e4733a185d549446527620772469361756457052">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/ksoap2-j2se-3.6.0_e491fbf37cab83b1948190d91f2af296b5bd171b.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.2.0_34b93ceb2d02a8e63eae149dad84c1cfcd024c77.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.0_4ccdae612bcd3c78c3f9267ec38b1893824ccff9.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/libs/internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.0_5b529c42b95ef82ca963f91bf924d520372a7e2c.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/org.xmlpull/xmlpull/1.1.3.3/9b62254da05ce6399a09164362da7b2419de63ca/xmlpull-1.1.3.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9b62254da05ce6399a09164362da7b2419de63ca">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/xmlpull-1.1.3.3_3d46286ef1d7ed24039590fe9d6584c4aa36902d.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.0_559591a0a628ca1c763d67283c9d9b7a771414c2.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/com.google.code.ksoap2-android/ksoap2-base/3.6.0/290baebc90b7b320ccb2adb2ed38d7838bc805a1/ksoap2-base-3.6.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="290baebc90b7b320ccb2adb2ed38d7838bc805a1">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/ksoap2-base-3.6.0_4044bd55bfc9f5823fa3521f9d5f7721dc03500c.jar" />
+    </item>
+    <item
+        jar="/home/matthias/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.0_1167db5129caf8963a1a42d1ff3f1a86ab9719b7.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/design/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1aa5b025efe97f5006f5be16d6ca67c6c3c0c0d8">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.2.0_ebb62e6c5997e414e609a57e7bb0e0fa712f829c.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.0_e0db14ffb21197c4ad63e176a61a6811808d17d6.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/net.sourceforge.kxml/kxml/2.2.4/1642506e490548d96984b8370e44257c156097f7/kxml-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1642506e490548d96984b8370e44257c156097f7">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/kxml-2.2.4_6c1033796d92dfb0cd30e2a3fd4dafb33cbffecc.jar" />
+    </item>
+
+</items>

@@ -1,9 +1,10 @@
 package fachschaftwirtschaft.fachschaftapp;
 
-import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +12,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -22,7 +20,7 @@ import android.widget.Toast;
 /**
  * @author Matthias Heinen
  */
-@SuppressLint("SetJavaScriptEnabled")
+//@SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean result) {
                 if(result) {
-                    WebView displayYoutubeVideo = (WebView) findViewById(R.id.webView);
+/*                    WebView displayYoutubeVideo = (WebView) findViewById(R.id.webView);
                     String frameVideo = "<iframe width=\"370\" height=\"290\" src=\"https://www.youtube.com/embed/ExG9CydpZO4\" frameborder=\"0\" allowfullscreen></iframe>";
 
                     displayYoutubeVideo.setVisibility(View.VISIBLE);
@@ -87,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     WebSettings webSettings = displayYoutubeVideo.getSettings();
                     webSettings.setJavaScriptEnabled(true);
                     displayYoutubeVideo.loadData(frameVideo, "text/html", "utf-8");
-
+*/
                 } else startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         }new RegisteredTask().execute();
@@ -115,9 +113,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, TermineActivity.class));
     }
 
+    /**
+     * Falls Youtube App installiert, starte Video in dieser, sonst Auswahlmenü
+     * @param button, der mit android:onClick in xml eingebunden ist
+     */
     public void startVideo (View button) {
-
-
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + "ExG9CydpZO4"));
+                startActivity(intent);
+            } catch (ActivityNotFoundException ex) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://www.youtube.com/watch?v=" + "ExG9CydpZO4"));
+                startActivity(intent);
+            }
     }
 }
 

@@ -21,10 +21,10 @@ public class EinstellungenActivity extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
 
-        EditText name = (EditText) findViewById(R.id.editText);
+        EditText name = (EditText) findViewById(R.id.settingsEditText);
         name.setText(sharedpreferences.getString("nameKey", ""));
 
-        EditText gruppe = (EditText) findViewById(R.id.editText2);
+        EditText gruppe = (EditText) findViewById(R.id.settingsEditText2);
         gruppe.setText(sharedpreferences.getString("gruppeKey", ""));
 
 
