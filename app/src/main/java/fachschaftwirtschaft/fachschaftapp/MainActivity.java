@@ -64,25 +64,19 @@ public class MainActivity extends AppCompatActivity {
                 String name = sharedpreferences.getString("nameKey", "");
                 Boolean result = false;
                 if(name.equals(""))return result;
-
                 else {
                     result = true;
                     return result;
                 }
-
             }
             @Override
             protected void onPostExecute(Boolean result) {
                 if(result) {
                 } else startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-
-
             }
-
-
         }new RegisteredTask().execute();
-
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -94,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.einstellungen) {
-            startActivity(new Intent(this, EinstellungenActivity.class));
+            startActivity(new Intent(MainActivity.this, EinstellungenActivity.class));
 
             return true;
         }
@@ -102,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startTermine (View button) {
-        startActivity(new Intent(this, TermineActivity.class));
+        startActivity(new Intent(MainActivity.this, TermineActivity.class));
     }
 
 }
