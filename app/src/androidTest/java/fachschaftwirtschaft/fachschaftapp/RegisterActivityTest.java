@@ -76,7 +76,7 @@ public class RegisterActivityTest {
         SharedPreferences prefs = activity.getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear();
-        editor.commit();
+        editor.apply();
     }
 }
 

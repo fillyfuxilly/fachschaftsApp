@@ -40,7 +40,7 @@ public class MainActivityTest  {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("nameKey", "Matthias");
         editor.putString("gruppeKey", "8");
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -74,7 +74,7 @@ public class MainActivityTest  {
         SharedPreferences prefs = activity.getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear();
-        editor.commit();
+        editor.apply();
     }
 }
 
