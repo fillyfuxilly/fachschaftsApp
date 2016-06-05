@@ -1,14 +1,9 @@
-/**
- * @Author Matthias Heinen
- */
 package fachschaftwirtschaft.fachschaftapp;
-
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -19,6 +14,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+
+/**
+ * @author Matthias Heinen
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button btn;

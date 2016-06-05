@@ -1,6 +1,4 @@
-/**
- * @Author Matthias Heinen
- */
+
 package fachschaftwirtschaft.fachschaftapp;
 
 import android.content.Context;
@@ -9,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
+/**
+ * @author Matthias Heinen
+ */
 public class EinstellungenActivity extends AppCompatActivity {
 
     SharedPreferences sharedpreferences;

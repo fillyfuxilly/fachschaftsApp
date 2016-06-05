@@ -1,6 +1,4 @@
-/**
- * @Author Matthias Heinen
- */
+
 package fachschaftwirtschaft.fachschaftapp;
 
 import android.app.Activity;
@@ -18,12 +16,14 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+/**
+ * @author Matthias Heinen
+ */
 public class RegisterActivity extends Activity {
 
-    EditText ed1,ed2;
+    EditText ed1;
     Button b1;
     SharedPreferences sharedpreferences;
-    ImageButton ibtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +60,5 @@ public class RegisterActivity extends Activity {
         });
 
 
-
-
-        /*ibtn = (ImageButton) findViewById(R.id.imageButton_back);
-
-        ibtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-            }
-        });*/
     }
 }

@@ -1,11 +1,10 @@
-/**
- * @Author Matthias Heinen
- */
 package fachschaftwirtschaft.fachschaftapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+/**
+ * @author Matthias Heinen
+ */
 public class AdminActivity extends AppCompatActivity {
 
     @Override
