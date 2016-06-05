@@ -37,13 +37,21 @@
             android:hint="@string/set_name"
             android:id="@+id/settingsEditText" />
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/set_grp"
-            android:id="@+id/settingsEditText2" />
+
 
     </android.support.design.widget.TextInputLayout>
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view2"
+        android:layout_marginTop="60dp">
 
+    <android.support.design.widget.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/set_grp"
+        android:id="@+id/settingsEditText2" />
+
+    </android.support.design.widget.TextInputLayout>
 </RelativeLayout>
