@@ -10,6 +10,7 @@
     <string name="ter">Termine</string>
     <string name="ter_text">Deine Termine findest du hier:</string>
     <string name="main_text">"Hier findet ihr Links mit den wichtigsten Infos für euch. \n Ihr könnt eure Termine einsehen und bekommt Infos zu den Orten an denen sie stattfinden."</string>
-    <string name="form_username">Dein Name</string>
+    <string name="set_name">Dein Name</string>
+    <string name="set_grp">Deine Gruppe</string>
 
 </resources>
