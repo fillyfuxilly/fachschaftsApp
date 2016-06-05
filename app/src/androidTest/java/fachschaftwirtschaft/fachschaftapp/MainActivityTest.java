@@ -12,6 +12,7 @@ import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,6 +45,8 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
+
 import static org.junit.Assert.*;
 
 
@@ -51,28 +54,27 @@ import static org.junit.Assert.*;
  * @Author Matthias Heinen
  */
 @RunWith(AndroidJUnit4.class)
-@LargeTest
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MainActivityTest  {
 
 
 
     @Rule
-    public final ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class, true, false);
+    public final ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
 
-    @Before
-    public void before() {
-        rule.launchActivity(new Intent());
+
+    @Test
+    public void test1Register() {
         Activity activity = rule.getActivity();
         SharedPreferences prefs = activity.getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("nameKey", "Matthias");
         editor.putString("gruppeKey", "8");
         editor.commit();
-
     }
 
     @Test
-    public void clickTermineButton() {
+    public void test2ClickTermineButton() {
         Intents.init();
 
         onView(withId(R.id.imageButton)).perform(click());
@@ -82,13 +84,21 @@ public class MainActivityTest  {
     }
 
     @Test
-    public void clickInfosButton() {
+    public void test3ClickInfosButton() {
         Intents.init();
 
         onView(withId(R.id.imageButton_infos)).perform(click());
         intending(toPackage(InfosActivity.class.getName()));
 
         Intents.release();
+    }
+    @Test
+    public void test4ClearSharedPrefs() {
+        Activity activity = rule.getActivity();
+        SharedPreferences prefs = activity.getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear();
+        editor.commit();
     }
 }
 

@@ -1,6 +1,9 @@
 package fachschaftwirtschaft.fachschaftapp;
 
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
@@ -8,9 +11,11 @@ import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
@@ -30,43 +35,45 @@ import static org.hamcrest.Matchers.instanceOf;
  * @Author Matthias Heinen
  */
 @RunWith(AndroidJUnit4.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RegisterActivityTest {
 RegisterActivity activity;
 
     @Rule
-    public ActivityTestRule<RegisterActivity> rule = new ActivityTestRule<>(RegisterActivity.class, true, false);
+    public ActivityTestRule<RegisterActivity> rule = new ActivityTestRule<>(RegisterActivity.class);
 
-    @Before
-    public void setUp() {
-        Intents.init();
-        activity = rule.launchActivity(null);
-    }
-    @After
-    public void tearDown() {
-        Intents.release();
-    }
 
     @Test
-    public void registerClick() {
-        onView(ViewMatchers.withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
-        onView(ViewMatchers.withId(R.id.spinner)).perform(click());
-        onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
-        onView(ViewMatchers.withId(R.id.button_r)).perform(click());
-        intending(toPackage(MainActivity.class.getName()));
-    }
-
-    @Test
-    public void typeName() {
+    public void test1TypeName() {
         onView(ViewMatchers.withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
         onView(ViewMatchers.withId(R.id.editText)).check(matches(withText("MatThias")));
     }
     @Test
-    public void selectGroup() {
+    public void test2SelectGroup() {
         onView(ViewMatchers.withId(R.id.spinner)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
         onView(ViewMatchers.withId(R.id.spinner)).check(matches(withSpinnerText(containsString("3"))));
     }
 
+    @Test
+    public void test3RegisterClick() {
+        Intents.init();
+        onView(ViewMatchers.withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
+        onView(ViewMatchers.withId(R.id.spinner)).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
+        onView(ViewMatchers.withId(R.id.button_r)).perform(click());
+        intending(toPackage(MainActivity.class.getName()));
+        Intents.release();
+    }
+
+    @Test
+    public void test4ClearSharedPrefs() {
+        Activity activity = rule.getActivity();
+        SharedPreferences prefs = activity.getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear();
+        editor.commit();
+    }
 }
 
 
