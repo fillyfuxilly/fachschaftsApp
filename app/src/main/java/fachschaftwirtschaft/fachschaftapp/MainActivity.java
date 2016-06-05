@@ -1,5 +1,6 @@
 package fachschaftwirtschaft.fachschaftapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +11,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -19,15 +22,19 @@ import android.widget.Toast;
 /**
  * @author Matthias Heinen
  */
+@SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
     ImageButton ibtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         btn = (Button) findViewById(R.id.button_clear);
 
@@ -51,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         class RegisteredTask extends AsyncTask<Void,Void,Boolean> {
 
             @Override
@@ -70,6 +74,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean result) {
                 if(result) {
+                    WebView displayYoutubeVideo = (WebView) findViewById(R.id.webView);
+                    String frameVideo = "<iframe width=\"370\" height=\"290\" src=\"https://www.youtube.com/embed/ExG9CydpZO4\" frameborder=\"0\" allowfullscreen></iframe>";
+
+                    displayYoutubeVideo.setVisibility(View.VISIBLE);
+                    displayYoutubeVideo.setWebViewClient(new WebViewClient() {
+                        @Override
+                        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                            return false;
+                        }
+                    });
+                    WebSettings webSettings = displayYoutubeVideo.getSettings();
+                    webSettings.setJavaScriptEnabled(true);
+                    displayYoutubeVideo.loadData(frameVideo, "text/html", "utf-8");
+
                 } else startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         }new RegisteredTask().execute();
@@ -97,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, TermineActivity.class));
     }
 
+    public void startVideo (View button) {
+
+
+    }
 }
 
 
