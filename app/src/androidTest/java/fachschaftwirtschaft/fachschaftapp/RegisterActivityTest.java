@@ -24,7 +24,7 @@ import static org.hamcrest.Matchers.instanceOf;
 
 
 /**
- * @Author Matthias Heinen
+ * @author Matthias Heinen
  */
 @RunWith(AndroidJUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

@@ -18,7 +18,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.*;
 
 
 /**
- * @Author Matthias Heinen
+ * @author Matthias Heinen
  */
 @RunWith(AndroidJUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
