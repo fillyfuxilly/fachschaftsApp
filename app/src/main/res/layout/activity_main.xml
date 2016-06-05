@@ -24,7 +24,8 @@
             android:layout_column="0"
             android:layout_row="0"
             android:layout_columnSpan="2"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/logo_desc" />
 
         <TextView
             android:text="@string/ter_text"
@@ -49,7 +50,8 @@
             android:padding="10dp"
             android:clickable="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/btn_ter_desc" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,7 +74,8 @@
             android:background="#20549f"
             android:padding="10dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
+            android:layout_width="wrap_content"
+            android:contentDescription="@string/info_icon" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,13 +93,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="YT-Video zur Fachschaft:"
             android:id="@+id/textView12"
             android:layout_row="4"
             android:layout_column="0"
             android:layout_marginTop="60sp"
             android:layout_marginLeft="10sp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:text="@string/yt_video" />
 
         <ImageButton
             android:layout_width="70dp"
@@ -107,10 +110,11 @@
             android:background="@drawable/yt"
             android:layout_marginLeft="22dp"
             android:layout_marginTop="35dp"
-            android:onClick="startVideo"/>
+            android:onClick="startVideo"
+            android:contentDescription="@string/yt_icon" />
 
         <Button
-            android:text="Clear SharedPrefs"
+            android:text="@string/clear_sharedprefs"
             android:id="@+id/button_clear"
             android:layout_row="9"
             android:layout_column="0"
