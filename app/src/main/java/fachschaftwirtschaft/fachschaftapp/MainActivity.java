@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        WebView webview = (WebView) findViewById(R.id.webView);
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.loadData("<iframe src=\"https://www.youtube.com/watch?v=ExG9CydpZO4\"></iframe>","text/html","utf-8");
 
         btn = (Button) findViewById(R.id.button_clear);
 
