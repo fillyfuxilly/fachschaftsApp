@@ -4,24 +4,18 @@ package fachschaftwirtschaft.fachschaftapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.test.espresso.intent.Intents;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.*;
-
-import static android.support.test.espresso.intent.Intents.intending;
 import static android.support.test.espresso.assertion.ViewAssertions.*;
-import static android.support.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.allOf;
@@ -40,6 +34,9 @@ public class RegisterActivityTest {
     public ActivityTestRule<RegisterActivity> rule = new ActivityTestRule<>(RegisterActivity.class);
 
 
+    /**
+     * Prüft ob die Texteingabe funktioniert
+     */
     @Test
     public void test1TypeName() throws Exception {
 
@@ -47,6 +44,10 @@ public class RegisterActivityTest {
         onView(withId(R.id.editText)).perform(replaceText("MatThias"));
         onView(withId(R.id.editText)).check(matches(withText("MatThias")));
     }
+
+    /**
+     * Prüft, ob die Gruppenauswahl funktioniert
+     */
     @Test
     public void test2SelectGroup()throws Exception {
         onView(ViewMatchers.withId(R.id.spinner)).perform(click());
@@ -54,6 +55,9 @@ public class RegisterActivityTest {
         onView(ViewMatchers.withId(R.id.spinner)).check(matches(withSpinnerText(containsString("3"))));
     }
 
+    /**
+     * Prüft, ob der Registrierungsprozess funktioniert.
+     */
     @Test
     public void test3RegisterClick()throws Exception {
         onView(ViewMatchers.withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
@@ -63,6 +67,9 @@ public class RegisterActivityTest {
         onView(withId(R.id.spinner)).check(doesNotExist());
     }
 
+    /**
+     * Setzt die Registrierung wieder zurück.
+     */
     @Test
     public void test4ClearSharedPrefs()throws Exception {
         Activity activity = rule.getActivity();
