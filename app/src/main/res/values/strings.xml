@@ -2,8 +2,6 @@
     <string name="app_name">Ersti-Helfer</string>
     <string name="reg_menu">Meine Einstellungen</string>
     <string name="reg">Registrieren</string>
-    <string name="d_name">Dein Name:</string>
-    <string name="d_gruppe">Deine Gruppe:</string>
     <string name="reg_text">Registriere deinen Namen und deine Gruppe</string>
     <string name="welc1">Hallo und herzlich Willkommen zur Ersti-Helfer App der Fachschaft Wirtschaft!</string>
     <string name="welc2">Diese App soll euch beim Einstieg in das Studium helfen, indem wir euch Informationen zu eurer Erstsemestereinführung bereitstellen.</string>
