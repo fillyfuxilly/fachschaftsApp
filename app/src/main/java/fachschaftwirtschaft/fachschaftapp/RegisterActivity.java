@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,11 +25,14 @@ public class RegisterActivity extends Activity {
     EditText ed1;
     Button b1;
     SharedPreferences sharedpreferences;
+    private static final String TAG = "RegisterActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        Log.d(TAG, "Register Layout aufgebaut");
 
         ed1=(EditText)findViewById(R.id.editText);
 
@@ -37,13 +41,16 @@ public class RegisterActivity extends Activity {
 
         final Spinner dropdown = (Spinner)findViewById(R.id.spinner);
         String[] items = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
 
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Log.d(TAG, "Register Button gedrückt");
+
                 sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
                 String n  = ed1.getText().toString();
                 String g  = dropdown.getSelectedItem().toString();
@@ -55,6 +62,8 @@ public class RegisterActivity extends Activity {
                 editor.apply();
                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                 Toast.makeText(RegisterActivity.this,"Erfolgreich registriert", Toast.LENGTH_LONG).show();
+
+                Log.d(TAG, "Erfolgreich registriert");
 
             }
         });
