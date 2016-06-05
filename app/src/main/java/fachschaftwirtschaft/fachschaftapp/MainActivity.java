@@ -20,7 +20,6 @@ import android.widget.Toast;
 /**
  * @author Matthias Heinen
  */
-//@SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
