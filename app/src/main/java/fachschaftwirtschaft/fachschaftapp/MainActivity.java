@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Falls Youtube App installiert, starte Video in dieser, sonst Auswahlmenü
-     * @param button, der mit android:onClick in xml eingebunden ist
+     * @param button, der mit android:onClick im xml Layout eingebunden ist
      */
     public void startVideo (View button) {
             try {
