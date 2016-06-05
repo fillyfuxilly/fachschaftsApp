@@ -7,12 +7,10 @@
     <string name="reg_text">Registriere deinen Namen und deine Gruppe</string>
     <string name="welc1">Hallo und herzlich Willkommen zur Ersti-Helfer App der Fachschaft Wirtschaft!</string>
     <string name="welc2">Diese App soll euch beim Einstieg in das Studium helfen, indem wir euch Informationen zu eurer Erstsemestereinführung bereitstellen.</string>
-    <string name="ter">Termine</string>
     <string name="ter_text">Deine Termine findest du hier:</string>
     <string name="main_text">"Hier findet ihr Links mit den wichtigsten Infos für euch. Ihr könnt eure Termine einsehen und bekommt Infos zu den Orten an denen sie stattfinden."</string>
     <string name="set_name">Dein Name</string>
     <string name="set_grp">Dein Gruppe</string>
-    <string name="video">Video des AStA über den Fachschaftsrat</string>
     <string name="info_text">Weitere Infos findest du hier:</string>
 
 </resources>
