@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean result) {
 
-                if(result) {
+                if(!result) {
 
                     Log.d(TAG, "User bereits registriert");
 
