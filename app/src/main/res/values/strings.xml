@@ -21,5 +21,6 @@
     <string name="einstellungen">Einstellungen</string>
     <string name="hier_kommen_dann_die_allgemeinen_infos">Hier kommen dann die allgemeinen Infos</string>
     <string name="zurueck_btn">Zurück zur Startseite</string>
+    <string name="admin">Administration</string>
 
 </resources>

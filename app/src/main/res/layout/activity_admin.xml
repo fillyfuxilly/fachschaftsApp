@@ -9,4 +9,45 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="fachschaftwirtschaft.fachschaftapp.AdminActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/admin_et1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="28dp"
+        android:text="Title" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/admin_et2"
+        android:layout_below="@+id/admin_et1"
+        android:layout_alignStart="@+id/admin_et1"
+        android:text="Location" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/admin_et4"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/admin_et2"
+        android:text="Beschreibung" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abschicken"
+        android:id="@+id/button"
+        android:layout_below="@+id/admin_et4"
+        android:onClick="newAppointment"
+        android:layout_marginTop="39dp" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:layout_below="@+id/admin_et2"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
