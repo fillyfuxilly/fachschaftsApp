@@ -111,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         }
+        if (id == R.id.admin) {
+            startActivity(new Intent(MainActivity.this, AdminActivity.class));
+
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
