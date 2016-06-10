@@ -22,5 +22,7 @@
     <string name="hier_kommen_dann_die_allgemeinen_infos">Hier kommen dann die allgemeinen Infos</string>
     <string name="zurueck_btn">Zurück zur Startseite</string>
     <string name="admin">Administration</string>
+    <string name="links">Hier findet ihr die Links zu ein paar nützlichen Apps</string>
+    <string name="ueberschrift_termine">Deine nächsten Termine:</string>
 
 </resources>
