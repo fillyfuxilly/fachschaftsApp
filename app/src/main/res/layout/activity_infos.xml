@@ -12,22 +12,72 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hier_kommen_dann_die_allgemeinen_infos"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp" />
+        android:text="@string/links"
+        android:id="@+id/info1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/link1"
+        android:id="@+id/info2"
+        android:textSize="18sp"
+        android:layout_below="@+id/info1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="7pt"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/link2"
+        android:id="@+id/info3"
+        android:textSize="18sp"
+        android:layout_below="@+id/info2"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/map1"
+        android:id="@+id/info11"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_marginTop="7pt"
+        android:layout_below="@+id/info3"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/map2"
+        android:id="@+id/info12"
+        android:textSize="18sp"
+        android:layout_below="@+id/info11"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:src="@drawable/torminbruecke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/logo_desc"
+        android:layout_below="@+id/info12"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2pt"/>
+
+    <Button
         android:text="@string/zurueck_btn"
         android:id="@+id/zurueck"
-        android:layout_row="3"
-        android:layout_column="0"
-        android:textSize="18sp"
-        android:layout_marginBottom="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:layout_gravity="start"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
