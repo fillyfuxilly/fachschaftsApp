@@ -25,5 +25,9 @@
     <string name="menu_register">Registrieren</string>
     <string name="links">Hier findet ihr die Links zu ein paar nützlichen Apps</string>
     <string name="ueberschrift_termine">Deine nächsten Termine:</string>
+    <string name="link1">Link zur Mensa App</string>
+    <string name="link2">Link zur Bus App</string>
+    <string name="map1">Hier findest du die Aaseerallye:</string>
+    <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
 
 </resources>
