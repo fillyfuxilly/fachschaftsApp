@@ -14,7 +14,8 @@
         android:verticalSpacing="10sp"
         android:horizontalSpacing="10sp"
         android:stretchMode="columnWidth"
-        android:gravity="center">
+        android:gravity="center"
+        android:columnOrderPreserved="false">
 
         <ImageView
             android:id="@+id/imageView"
@@ -33,10 +34,11 @@
             android:layout_column="0"
             android:layout_row="2"
             android:layout_marginTop="60sp"
-            android:layout_marginStart="10sp"
+            android:layout_marginStart="60dp"
             android:textSize="18sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -46,12 +48,13 @@
             android:layout_column="1"
             android:layout_row="2"
             android:layout_marginTop="48sp"
-            android:layout_marginStart="30sp"
+            android:layout_marginStart="10dp"
             android:padding="10dp"
             android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/btn_ter_desc" />
+            android:contentDescription="@string/btn_ter_desc"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,8 +64,9 @@
             android:layout_row="3"
             android:layout_column="0"
             android:layout_marginTop="60sp"
-            android:layout_marginStart="10sp"
-            android:textSize="18sp" />
+            android:layout_marginStart="60dp"
+            android:textSize="18sp"
+            android:layout_gravity="right" />
 
         <ImageButton
             android:id="@+id/imageButton_infos"
@@ -70,12 +74,13 @@
             android:layout_row="3"
             android:layout_column="1"
             android:layout_marginTop="45sp"
-            android:layout_marginStart="30sp"
+            android:layout_marginStart="10dp"
             android:background="#20549f"
             android:padding="10dp"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:contentDescription="@string/info_icon" />
+            android:contentDescription="@string/info_icon"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,9 +102,10 @@
             android:layout_row="4"
             android:layout_column="0"
             android:layout_marginTop="60sp"
-            android:layout_marginStart="10sp"
+            android:layout_marginStart="60dp"
             android:textSize="18sp"
-            android:text="@string/yt_video" />
+            android:text="@string/yt_video"
+            android:layout_gravity="right" />
 
         <ImageButton
             android:layout_width="70dp"
@@ -108,22 +114,107 @@
             android:layout_row="4"
             android:layout_column="1"
             android:background="@drawable/yt"
-            android:layout_marginStart="22dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:onClick="startVideo"
-            android:contentDescription="@string/yt_icon" />
+            android:contentDescription="@string/yt_icon"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_vf_desc"
+            android:id="@+id/textView"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="20dp"
+            android:layout_columnSpan="2" />
+
+        <ViewFlipper
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewFlipper"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:layout_rowSpan="4"
+            android:layout_columnSpan="2"
+            android:layout_gravity="center_horizontal"
+            android:animateFirstView="true"
+            android:autoStart="true"
+            android:clickable="true"
+            android:flipInterval="4500"
+            android:focusable="false">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@drawable/fach"
+                android:contentDescription="@string/o_woche" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView4"
+                android:src="@drawable/fach0"
+                android:contentDescription="@string/o_woche" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@drawable/fach1"
+                android:contentDescription="@string/o_woche" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView6"
+                android:src="@drawable/fach2"
+                android:contentDescription="@string/o_woche" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView7"
+                android:src="@drawable/fach3"
+                android:contentDescription="@string/o_woche" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView8"
+                android:src="@drawable/fach4"
+                android:contentDescription="@string/o_woche" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView9"
+                android:src="@drawable/fach5"
+                android:contentDescription="@string/o_woche" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView10"
+                android:src="@drawable/fach6"
+                android:contentDescription="@string/o_woche" />
+        </ViewFlipper>
 
         <Button
             android:text="@string/clear_sharedprefs"
             android:id="@+id/button_clear"
-            android:layout_row="9"
+            android:layout_row="10"
             android:layout_column="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textAllCaps="false"
             android:layout_gravity="start"
-            android:layout_marginTop="20sp" />
+            android:layout_marginTop="20sp"
+            android:layout_columnSpan="2" />
 
     </GridLayout>
 

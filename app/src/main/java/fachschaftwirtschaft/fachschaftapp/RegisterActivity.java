@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -29,7 +30,9 @@ public class RegisterActivity extends Activity {
     Button b1;
     SharedPreferences sharedpreferences;
     private static final String TAG = "RegisterActivity";
-    String n,g;
+    String n;
+    int g;
+    NumberPicker picker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,17 @@ public class RegisterActivity extends Activity {
 
         b1=(Button)findViewById(R.id.button_r);
 
-
+/*
         final Spinner dropdown = (Spinner)findViewById(R.id.spinner);
         String[] items = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
+*/
+        picker = (NumberPicker) findViewById(R.id.numberPicker);
 
+        picker.setMinValue(1);
+        picker.setMaxValue(10);
+        picker.setWrapSelectorWheel(false);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,9 +65,9 @@ public class RegisterActivity extends Activity {
 
                 sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
                 n  = ed1.getText().toString();
-                g  = dropdown.getSelectedItem().toString();
+                g  = picker.getValue();
 
-                new AsyncRegisterNewUser().execute(new User(n, Integer.parseInt(g)));
+                new AsyncRegisterNewUser().execute(new User(n, g));
 
             }
         });
@@ -75,7 +83,7 @@ public class RegisterActivity extends Activity {
             SharedPreferences.Editor editor = sharedpreferences.edit();
 
             editor.putString("nameKey", n);
-            editor.putString("gruppeKey", g);
+            editor.putString("gruppeKey", Integer.toString(g));
             editor.apply();
 
             startActivity(new Intent(RegisterActivity.this, MainActivity.class));

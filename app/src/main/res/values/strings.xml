@@ -14,7 +14,7 @@
     <string name="info_text">Weitere Infos findest du hier:</string>
     <string name="logo_desc">Logo der Fachschaft</string>
     <string name="btn_ter_desc">Kalender Icon</string>
-    <string name="yt_video">YT-Video zur Fachschaft:</string>
+    <string name="yt_video">Youtube-Video zur Fachschaft:</string>
     <string name="info_icon">Info icon</string>
     <string name="yt_icon">YT Icon</string>
     <string name="clear_sharedprefs">Clear SharedPrefs</string>
@@ -29,5 +29,7 @@
     <string name="link2">Link zur Bus App</string>
     <string name="map1">Hier findest du die Aaseerallye:</string>
     <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
+    <string name="main_vf_desc">Das erwartet dich in der O-Woche:</string>
+    <string name="o_woche">o-woche</string>
 
 </resources>
