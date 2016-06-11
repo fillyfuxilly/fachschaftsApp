@@ -58,6 +58,7 @@ public class RegisterActivityTest {
     /**
      * Prüft, ob der Registrierungsprozess funktioniert.
      */
+    /*
     @Test
     public void test3RegisterClick()throws Exception {
         onView(ViewMatchers.withId(R.id.editText)).perform(typeText("MatThias"), closeSoftKeyboard());
@@ -65,7 +66,7 @@ public class RegisterActivityTest {
         onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
         onView(ViewMatchers.withId(R.id.button_r)).perform(click());
         onView(withId(R.id.spinner)).check(doesNotExist());
-    }
+    }*/
 
     /**
      * Setzt die Registrierung wieder zurück.

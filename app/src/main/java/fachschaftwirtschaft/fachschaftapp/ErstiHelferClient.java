@@ -56,6 +56,7 @@ public class ErstiHelferClient {
     public static String registerNewUser(String userName, int groupNr) {
         String METHOD_NAME = "registerNewUser";
         SoapObject response = null;
+        String back = "Serverfehler";
 
         try {
            response = executeSoapAction(METHOD_NAME, userName, groupNr);
@@ -63,7 +64,13 @@ public class ErstiHelferClient {
         } catch (SoapFault e)  {
             e.printStackTrace();
         }
-        return response.getPrimitivePropertyAsString("text");
+        try {
+            back = response.getPrimitivePropertyAsString("text");
+
+        } catch(NullPointerException e) {
+            e.printStackTrace();
+        }
+        return back;
     }
 
 

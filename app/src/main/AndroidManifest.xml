@@ -17,12 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TermineActivity" />
+        <activity android:name=".AppointmentsActivity" />
         <activity android:name=".InfosActivity" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
-        <activity android:name=".EinstellungenActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".AdminActivity" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
