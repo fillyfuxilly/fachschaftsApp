@@ -106,13 +106,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.einstellungen) {
+        if (id == R.id.settings) {
             startActivity(new Intent(MainActivity.this, EinstellungenActivity.class));
 
             return true;
         }
         if (id == R.id.admin) {
             startActivity(new Intent(MainActivity.this, AdminActivity.class));
+
+            return true;
+        }
+        if (id == R.id.register) {
+            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
 
             return true;
         }

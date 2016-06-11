@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import webService.User;
+
 /**
  * @author Matthias Heinen
  */
@@ -26,6 +29,7 @@ public class RegisterActivity extends Activity {
     Button b1;
     SharedPreferences sharedpreferences;
     private static final String TAG = "RegisterActivity";
+    String n,g;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,22 +56,33 @@ public class RegisterActivity extends Activity {
                 Log.d(TAG, "Register Button gedrückt");
 
                 sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
-                String n  = ed1.getText().toString();
-                String g  = dropdown.getSelectedItem().toString();
+                n  = ed1.getText().toString();
+                g  = dropdown.getSelectedItem().toString();
 
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                editor.putString("nameKey", n);
-                editor.putString("gruppeKey", g);
-                editor.apply();
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                Toast.makeText(RegisterActivity.this,"Erfolgreich registriert", Toast.LENGTH_LONG).show();
-
-                Log.d(TAG, "Erfolgreich registriert");
+                new AsyncRegisterNewUser().execute(new User(n, Integer.parseInt(g)));
 
             }
         });
+    }
+    private class AsyncRegisterNewUser extends AsyncTask<User, Void, String> {
+        @Override
+        protected String doInBackground(User... params) {
 
+            return ErstiHelferClient.registerNewUser(params[0].getUsername(), params[0].getGroupNr());
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
 
+            editor.putString("nameKey", n);
+            editor.putString("gruppeKey", g);
+            editor.apply();
+
+            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+            Toast.makeText(RegisterActivity.this, result, Toast.LENGTH_LONG).show();
+
+            Log.d(TAG, "Erfolgreich registriert");
+
+        }
     }
 }
