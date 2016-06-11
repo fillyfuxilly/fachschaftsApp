@@ -1,3 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 local.properties
-.idea/vcs.xml
+.idea
+*.iml
+*.dex
+.gradle
