@@ -12,6 +12,7 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.List;
 
 import webService.Appointment;
+import webService.User;
 
 
 /**
@@ -52,11 +53,24 @@ public class ErstiHelferClient {
         }
     }
 
+    public static String registerNewUser(String userName, int groupNr) {
+        String METHOD_NAME = "registerNewUser";
+        SoapObject response = null;
+
+        try {
+           response = executeSoapAction(METHOD_NAME, userName, groupNr);
+
+        } catch (SoapFault e)  {
+            e.printStackTrace();
+        }
+        return response.getPrimitivePropertyAsString("text");
+    }
+
 
     /**
-     * This method can be used to call the specified web service operation.
+     * Mit dieser Methode kann man Methoden des Web Service mit primitiven Rückgabeparametern nutzen.
      * @param methodName
-     * @return
+     * @return SoapPrimitive
      */
     private static SoapPrimitive executeSoapActionPrimitive(String methodName, Object... args) throws SoapFault {
 
@@ -115,9 +129,9 @@ public class ErstiHelferClient {
     }
 
     /**
-     * This method can be used to call the specified web service operation.
+     * Mit dieser Methode kann man Methoden des Web Service mit komplexen Rückgabeparametern nutzen.
      * @param methodName
-     * @return
+     * @return SoapObject
      */
     private static SoapObject executeSoapAction(String methodName, Object... args) throws SoapFault {
 
