@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         /**
-         * AsnyTask der prüft, ob der User sich bereits registriert hat. Falls ja wird MainActivity zu Ende aufgebaut.
+         * AsnyTask der prüft, ob der User sich bereits registriert hat. Falls ja wird MainActivity mit Funktionalität versehen.
          * Falls nein, dann wird der RegisterActivity Dialog gestartet.
          */
         class RegisteredTask extends AsyncTask<Void,Void,Boolean> {
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.settings) {
-            startActivity(new Intent(MainActivity.this, EinstellungenActivity.class));
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
 
             return true;
         }
@@ -125,20 +125,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Startet TermineActivity
-     * @param button, der mit android:onClick im xml Layout eingebunden ist
+     * Startet AppointmentsActivity
+     * @param button , der mit android:onClick im xml Layout eingebunden ist
      */
     public void startTermine (View button) {
 
         Log.d(TAG, "Termine Button gedrückt");
 
-        startActivity(new Intent(MainActivity.this, TermineActivity.class));
+        startActivity(new Intent(MainActivity.this, AppointmentsActivity.class));
 
     }
 
     /**
      * Falls Youtube App installiert, starte Video in dieser, sonst Auswahlmenü
-     * @param button, der mit android:onClick im xml Layout eingebunden ist
+     * @param button , der mit android:onClick im xml Layout eingebunden ist
      */
     public void startVideo (View button) {
 

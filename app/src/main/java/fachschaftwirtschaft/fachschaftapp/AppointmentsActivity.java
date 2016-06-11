@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TermineActivity extends AppCompatActivity {
+public class AppointmentsActivity extends AppCompatActivity {
     Button zb;
 
     @Override
@@ -19,7 +19,7 @@ public class TermineActivity extends AppCompatActivity {
         zb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TermineActivity.this, MainActivity.class));
+                startActivity(new Intent(AppointmentsActivity.this, MainActivity.class));
             }
         });
     }

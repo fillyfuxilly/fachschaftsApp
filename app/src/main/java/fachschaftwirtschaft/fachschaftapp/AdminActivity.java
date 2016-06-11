@@ -26,10 +26,12 @@ public class AdminActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * AsyncTask mit dem ein neuer Termin beim Web Service angelegt werden kann.
+     */
     class AsyncCreateAppointment extends AsyncTask<Appointment, Void, Void> {
         @Override
         protected Void doInBackground(Appointment... params) {
-            //Invoke webservice
             ErstiHelferClient.createAppointment(params[0]);
             return null;
         }
@@ -42,6 +44,11 @@ public class AdminActivity extends AppCompatActivity {
         }
 
     }
+
+    /**
+     * Sammelt Daten für einen neuen Termin und startet einen AsnycTask, um den Termin beim Web Service zu persistieren.
+     * @param button der mit android:onClick im xml Layout eingebunden ist
+     */
     public void newAppointment(View button) {
         EditText title = (EditText) findViewById(R.id.admin_et1);
         EditText location = (EditText) findViewById(R.id.admin_et2);

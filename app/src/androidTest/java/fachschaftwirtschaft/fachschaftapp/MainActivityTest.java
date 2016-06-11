@@ -3,6 +3,7 @@ package fachschaftwirtschaft.fachschaftapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import org.junit.FixMethodOrder;
@@ -13,6 +14,8 @@ import org.junit.runners.MethodSorters;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.*;
 import static android.support.test.espresso.assertion.ViewAssertions.*;
+import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
 
 
@@ -48,10 +51,15 @@ public class MainActivityTest  {
      */
     @Test
     public void test2ClickTermineButton() {
-
-        onView(withId(R.id.imageButton)).perform(click());
-        onView(withId(R.id.imageButton)).check(doesNotExist());
-
+        try {
+            Intents.init();
+            onView(withId(R.id.imageButton)).perform(click());
+            //onView(withId(R.id.imageButton)).check(doesNotExist());
+            intended(hasComponent(AppointmentsActivity.class.getName()));
+        } catch(Exception e){e.printStackTrace();}
+        finally {
+            Intents.release();
+        }
     }
 
     /**
