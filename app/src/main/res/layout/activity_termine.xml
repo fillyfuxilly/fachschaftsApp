@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ueberschrift_termine"
+        android:text="@string/title_appointments"
         android:id="@+id/textView100"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
@@ -26,12 +26,12 @@
         android:id="@+id/listView"
         android:layout_below="@+id/textView100"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/zurueck"
+        android:layout_above="@+id/back"
         android:textSize="22sp"
         android:layout_marginTop="20dp"/>
 
     <Button
-        android:text="@string/zurueck_btn"
+        android:text="@string/back_btn"
         android:id="@+id/zurueck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
