@@ -35,7 +35,7 @@ public class AppointmentsActivity extends AppCompatActivity {
 
         // zurueck zur Startseite
 
-        backBtn = (Button) findViewById(R.id.back);
+        backBtn = (Button) findViewById(R.id.zurueck);
         backBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
