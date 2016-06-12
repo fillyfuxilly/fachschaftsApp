@@ -1,40 +1,46 @@
 <resources>
     <string name="app_name">Ersti-Helfer</string>
+
+    <string name="main_text">Deine Termine findest du hier:</string>
+    <string name="main_text2">"Hier findet ihr Links mit den wichtigsten Infos für euch. Ihr könnt eure Termine einsehen und bekommt Infos zu den Orten an denen sie stattfinden."</string>
+    <string name="main_text3">Weitere Infos findest du hier:</string>
+    <string name="main_logo_desc">Logo der Fachschaft</string>
+    <string name="main_imageButton">Kalender Icon</string>
+    <string name="main_yt_video">Youtube-Video zur Fachschaft:</string>
+    <string name="main_btn_desc">Info icon</string>
+    <string name="main_yt_icon">YT Icon</string>
+    <string name="main_clear_sharedprefs">Clear SharedPrefs</string>
+    <string name="main_vf_desc">Das erwartet dich in der O-Woche:</string>
+    <string name="main_o_woche">o-woche</string>
+
+    <string name="admin_title">Titel</string>
+    <string name="admin_location">Ort</string>
+    <string name="admin_desc">Beschreibung</string>
+    <string name="admin_button">Speichern</string>
+    <string name="admin_headline">Neuen Termin anlegen</string>
+    <string name="admin_gruppe">Gruppe (0 für alle):</string>
+
+    <string name="menu_admin">Administration</string>
+    <string name="menu_register">Registrieren</string>
     <string name="menu_settings">Meine Einstellungen</string>
+
+    <string name="settings_textView">Einstellungen</string>
+
+
     <string name="reg">Registrieren</string>
     <string name="d_name">Dein Name:</string>
     <string name="d_gruppe">Deine Gruppe:</string>
     <string name="reg_text">Registriere deinen Namen und deine Gruppe</string>
     <string name="welc1">Hallo und herzlich Willkommen zur Ersti-Helfer App der Fachschaft Wirtschaft!</string>
     <string name="welc2">Diese App soll euch beim Einstieg in das Studium helfen, indem wir euch Informationen zu eurer Erstsemestereinführung bereitstellen.</string>
-    <string name="ter_text">Deine Termine findest du hier:</string>
-    <string name="main_text">"Hier findet ihr Links mit den wichtigsten Infos für euch. Ihr könnt eure Termine einsehen und bekommt Infos zu den Orten an denen sie stattfinden."</string>
     <string name="set_name">Dein Name</string>
     <string name="set_grp">Deine Gruppe</string>
-    <string name="info_text">Weitere Infos findest du hier:</string>
-    <string name="logo_desc">Logo der Fachschaft</string>
-    <string name="btn_ter_desc">Kalender Icon</string>
-    <string name="yt_video">Youtube-Video zur Fachschaft:</string>
-    <string name="info_icon">Info icon</string>
-    <string name="yt_icon">YT Icon</string>
-    <string name="clear_sharedprefs">Clear SharedPrefs</string>
-    <string name="einstellungen">Einstellungen</string>
     <string name="back_btn">Zurück zur Startseite</string>
-    <string name="menu_admin">Administration</string>
-    <string name="menu_register">Registrieren</string>
     <string name="links">Hier findet ihr die Links zu ein paar nützlichen Apps</string>
     <string name="title_appointments">Deine nächsten Termine:</string>
     <string name="link1">Link zur Mensa App</string>
     <string name="link2">Link zur Bus App</string>
     <string name="map1">Hier findest du die Aaseerallye:</string>
     <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
-    <string name="main_vf_desc">Das erwartet dich in der O-Woche:</string>
-    <string name="admin_title">Titel</string>
-    <string name="admin_location">Ort</string>
-    <string name="admin_desc">Beschreibung</string>
-    <string name="o_woche">o-woche</string>
-    <string name="admin_button">Speichern</string>
-    <string name="admin_headline">Neuen Termin anlegen</string>
-    <string name="admin_gruppe">Gruppe (0 für alle):</string>
 
 </resources>

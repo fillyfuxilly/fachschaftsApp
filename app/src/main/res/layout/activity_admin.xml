@@ -1,152 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/gridview2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:verticalSpacing="10sp"
-    android:horizontalSpacing="10sp"
-    android:stretchMode="columnWidth"
-    android:gravity="center"
-    android:columnOrderPreserved="false"
-    android:columnCount="2">
+    android:id="@+id/admin_scrollView">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/admin_headline"
-        android:id="@+id/admin_textView"
-        android:layout_column="0"
-        android:layout_row="0"
-        android:layout_columnSpan="2"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
-
-    <android.support.design.widget.TextInputLayout
+    <GridLayout
+        android:id="@+id/admin_gridView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/admin_view"
-        android:layout_column="0"
-        android:layout_row="1"
-        android:layout_columnSpan="2"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp">
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/admin_title"
-            android:id="@+id/admin_editText"/>
-
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/admin_view2"
-        android:layout_column="0"
-        android:layout_row="2"
-        android:layout_columnSpan="2"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/admin_location"
-            android:id="@+id/admin_editText2"/>
-
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/admin_view3"
-        android:layout_column="0"
-        android:layout_row="3"
-        android:layout_columnSpan="2"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/admin_desc"
-            android:id="@+id/admin_editText3" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_column="0"
-        android:layout_columnSpan="2"
-        android:layout_row="4"
-        android:weightSum="2"
-        android:layout_marginTop="10dp">
-
-        <DatePicker
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/datePicker"
-            android:layout_weight="1"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="2dp" />
-
-        <TimePicker
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/timePicker"
-            android:layout_weight="1"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="5dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_column="0"
-        android:layout_row="5">
+        android:verticalSpacing="10sp"
+        android:horizontalSpacing="10sp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:columnOrderPreserved="false"
+        android:columnCount="2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/admin_gruppe"
-            android:id="@+id/textView2"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp" />
+            android:text="@string/admin_headline"
+            android:id="@+id/admin_textView"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_columnSpan="2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp" />
 
-        <NumberPicker
-            android:layout_width="wrap_content"
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/admin_numberPicker"
-            android:layout_marginStart="20dp" />
+            android:id="@+id/admin_view"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_columnSpan="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/admin_title"
+                android:id="@+id/admin_editText"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/admin_view2"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_columnSpan="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/admin_location"
+                android:id="@+id/admin_editText2"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/admin_view3"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:layout_columnSpan="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/admin_desc"
+                android:id="@+id/admin_editText3" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_row="4"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            android:id="@+id/admin_linearLayout">
+
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/admin_datePicker"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="2dp" />
+
+            <TimePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/admin_timePicker"
+                android:layout_weight="1"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="5dp"
+                android:soundEffectsEnabled="true" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:layout_marginTop="15dp"
+            android:id="@+id/admin_linearLayout2">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/admin_button"
-                android:drawableStart="@android:drawable/ic_menu_save"
-                android:id="@+id/admin_button"
-                android:background="#20549f"
-                android:paddingEnd="10sp"
-                android:paddingStart="10sp"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:onClick="newAppointment"
+                android:text="@string/admin_gruppe"
+                android:id="@+id/admin_textView2"
                 android:layout_gravity="center"
-                android:layout_marginStart="200dp" />
+                android:layout_marginStart="25dp" />
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/admin_numberPicker"
+                android:layout_marginStart="20dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/admin_linearLayout3">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/admin_button"
+                    android:drawableStart="@android:drawable/ic_menu_save"
+                    android:id="@+id/admin_button"
+                    android:background="#20549f"
+                    android:paddingEnd="10sp"
+                    android:paddingStart="10sp"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:onClick="newAppointment"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="180dp" />
+            </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
-
-</GridLayout>
-
+    </GridLayout>
+</ScrollView>

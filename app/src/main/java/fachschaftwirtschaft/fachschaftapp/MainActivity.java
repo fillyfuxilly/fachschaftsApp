@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.d(TAG, "User bereits registriert");
 
-                    btn = (Button) findViewById(R.id.button_clear);
+                    btn = (Button) findViewById(R.id.main_button_clear);
 
                     btn.setOnClickListener(new View.OnClickListener() {
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    ibtn = (ImageButton) findViewById(R.id.imageButton_infos);
+                    ibtn = (ImageButton) findViewById(R.id.main_imageButton2);
 
                     ibtn.setOnClickListener(new View.OnClickListener() {
 
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
      * Startet AppointmentsActivity
      * @param button , der mit android:onClick im xml Layout eingebunden ist
      */
-    public void startTermine (View button) {
+    public void startAppointments (View button) {
 
         Log.d(TAG, "Termine Button gedrückt");
 

@@ -21,26 +21,35 @@ import webService.Appointment;
 public class AdminActivity extends AppCompatActivity {
 
     NumberPicker picker;
+    TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-
         picker = (NumberPicker) findViewById(R.id.admin_numberPicker);
-
-        picker.setMinValue(0);
-        picker.setMaxValue(10);
-        picker.setWrapSelectorWheel(false);
+        timePicker = (TimePicker) findViewById(R.id.admin_timePicker);
 
 
+        try {
+            timePicker.setIs24HourView(true);
+            picker.setMinValue(0);
+            picker.setMaxValue(10);
+            picker.setWrapSelectorWheel(false);
+        } catch(NullPointerException e) {
+            e.printStackTrace();
+            Toast.makeText(AdminActivity.this, "Etwas ist schief gelaufen", Toast.LENGTH_LONG).show();
+            recreate();
+        }
     }
 
     /**
      * AsyncTask mit dem ein neuer Termin beim Web Service angelegt werden kann.
      */
     class AsyncAddAppointment extends AsyncTask<Appointment, Void, String> {
+
         @Override
         protected String doInBackground(Appointment... params) {
 
@@ -49,10 +58,9 @@ public class AdminActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            //Set response
-            Toast.makeText(AdminActivity.this, result, Toast.LENGTH_LONG).show();
-            setContentView(R.layout.activity_admin);
 
+            Toast.makeText(AdminActivity.this, result, Toast.LENGTH_LONG).show();
+            recreate();
         }
 
     }
@@ -62,17 +70,23 @@ public class AdminActivity extends AppCompatActivity {
      * @param button der mit android:onClick im xml Layout eingebunden ist
      */
     public void newAppointment(View button) {
+
         EditText title = (EditText) findViewById(R.id.admin_editText);
         EditText location = (EditText) findViewById(R.id.admin_editText2);
-        EditText beschreibung = (EditText) findViewById(R.id.admin_editText3);
-        DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
-        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+        EditText description = (EditText) findViewById(R.id.admin_editText3);
+        DatePicker datePicker = (DatePicker) findViewById(R.id.admin_datePicker);
 
-        GregorianCalendar gc = new GregorianCalendar(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth(), timePicker.getCurrentHour(), timePicker.getCurrentMinute() );
+        try {
+            GregorianCalendar gc = new GregorianCalendar(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth(), timePicker.getCurrentHour(), timePicker.getCurrentMinute());
 
-        Appointment appointment = new Appointment(title.getText().toString(),location.getText().toString(), gc, beschreibung.getText().toString(), picker.getValue());
+            Appointment appointment = new Appointment(title.getText().toString(), location.getText().toString(), gc, description.getText().toString(), picker.getValue());
 
-        new AsyncAddAppointment().execute(appointment);
+            new AsyncAddAppointment().execute(appointment);
+        } catch(NullPointerException e) {
+            e.printStackTrace();
+            Toast.makeText(AdminActivity.this, "Etwas ist schief gelaufen", Toast.LENGTH_LONG).show();
+            recreate();
+        }
 
 
     }

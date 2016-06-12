@@ -162,6 +162,7 @@ public class ErstiHelferClient {
 	        /* Make the soap call using the SOAP_ACTION and the soap envelop. */
             List<HeaderProperty> reqHeaders = null;
 
+            new MarshalDate().register(envelope);
             @SuppressWarnings({"unused", "unchecked"})
             List<HeaderProperty> respHeaders = androidHttpTransport.call("", envelope , reqHeaders);
 
