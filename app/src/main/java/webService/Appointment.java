@@ -1,95 +1,64 @@
 package webService;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.GregorianCalendar;
 
 /**
- * Created by Turnus on 09.06.2016.
+ * @author Matthias Heinen
+ *
+ * Ein Objekt, dass als Termin beim WebService persistiert ist.
  */
 public class Appointment {
 
-    private static final long serialVersionUID = 1L;
-    private static int lastID = 0;
-
-    private int id;
     private String title;
-    // Wo findet der Termin statt?
     private String location;
-    // Wann trifft man sich?
-    private Date startTime;
-    // genauere Beschreibung
+    private GregorianCalendar date;
     private String description;
-    // timestamp für Erstellung des Termins
-    private Date createdAt;
-
-    Set<User> users=new HashSet<User>();
-
-    public Set<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
+    private int groupNr;
 
     public Appointment() {
     }
 
-    public Appointment(String title, String location, Date startTime, String description) {
-        this.id = ++lastID;
+    public Appointment(String title, String location, GregorianCalendar date, String description, int groupNr) {
         this.title = title;
         this.location = location;
-        this.startTime = startTime;
+        this.date = date;
         this.description = description;
-        this.createdAt = new Date(); // now
+        this.groupNr = groupNr;
     }
 
-    public String getTitel() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitel(String titel) {
+    public void setTitle(String titel) {
         this.title = titel;
     }
 
-    public String getOrt() {
+    public String getLocation() {
         return location;
     }
 
-    public void setOrt(String ort) {
+    public void setLocation(String ort) {
         this.location = ort;
     }
 
-    public Date getZeitpunkt() {
-        return startTime;
-    }
+    public GregorianCalendar getDate() { return date; }
 
-    public void setZeitpunkt(Date zeitpunkt) {
-        this.startTime = zeitpunkt;
-    }
+    public void setDate(GregorianCalendar date) { this.date = date;}
 
-    public String getBeschreibung() {
+    public String getDescription() {
         return description;
     }
 
-    public void setBeschreibung(String beschreibung) {
+    public void setDescription(String beschreibung) {
         this.description = beschreibung;
     }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
+    public int getGroupNr() {
+        return groupNr;
     }
 
-    public Date getErstelltAm() {
-        return createdAt;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
+    public void setGroupNr(int groupNr) {
+        this.groupNr = groupNr;
     }
 }

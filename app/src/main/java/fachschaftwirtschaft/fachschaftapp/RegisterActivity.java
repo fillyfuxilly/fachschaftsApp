@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -58,7 +60,18 @@ public class RegisterActivity extends AppCompatActivity {
                 n  = ed1.getText().toString();
                 g  = picker.getValue();
 
-                new AsyncRegisterNewUser().execute(new User(n, g));
+
+                ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+                if (networkInfo != null && networkInfo.isConnected()) {
+                    new AsyncRegisterNewUser().execute(new User(n, g));
+                } else {
+                    Log.d(TAG, "Keine Internetverbindung");
+                    Toast.makeText(RegisterActivity.this, "Verbindung zum Internet benötigt", Toast.LENGTH_LONG).show();
+                }
+
+
 
             }
         });

@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.NumberPicker;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import webService.Appointment;
 
@@ -17,11 +20,19 @@ import webService.Appointment;
  */
 public class AdminActivity extends AppCompatActivity {
 
+    NumberPicker picker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
+
+        picker = (NumberPicker) findViewById(R.id.admin_numberPicker);
+
+        picker.setMinValue(0);
+        picker.setMaxValue(10);
+        picker.setWrapSelectorWheel(false);
 
 
     }
@@ -29,17 +40,18 @@ public class AdminActivity extends AppCompatActivity {
     /**
      * AsyncTask mit dem ein neuer Termin beim Web Service angelegt werden kann.
      */
-    class AsyncCreateAppointment extends AsyncTask<Appointment, Void, Void> {
+    class AsyncAddAppointment extends AsyncTask<Appointment, Void, String> {
         @Override
-        protected Void doInBackground(Appointment... params) {
-            ErstiHelferClient.createAppointment(params[0]);
-            return null;
+        protected String doInBackground(Appointment... params) {
+
+            return ErstiHelferClient.addAppointment(params[0]);
         }
 
         @Override
-        protected void onPostExecute(Void result) {
+        protected void onPostExecute(String result) {
             //Set response
-            Toast.makeText(AdminActivity.this,"Termin erstellt", Toast.LENGTH_LONG).show();
+            Toast.makeText(AdminActivity.this, result, Toast.LENGTH_LONG).show();
+            setContentView(R.layout.activity_admin);
 
         }
 
@@ -50,15 +62,17 @@ public class AdminActivity extends AppCompatActivity {
      * @param button der mit android:onClick im xml Layout eingebunden ist
      */
     public void newAppointment(View button) {
-        EditText title = (EditText) findViewById(R.id.admin_et1);
-        EditText location = (EditText) findViewById(R.id.admin_et2);
-        EditText beschreibung = (EditText) findViewById(R.id.admin_et4);
+        EditText title = (EditText) findViewById(R.id.admin_editText);
+        EditText location = (EditText) findViewById(R.id.admin_editText2);
+        EditText beschreibung = (EditText) findViewById(R.id.admin_editText3);
         DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
-        Date date = (Date) new Date(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
+        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
 
-        Appointment appointment = new Appointment(title.toString(),location.toString(),date,beschreibung.toString());
+        GregorianCalendar gc = new GregorianCalendar(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth(), timePicker.getCurrentHour(), timePicker.getCurrentMinute() );
 
-        new AsyncCreateAppointment().execute(appointment);
+        Appointment appointment = new Appointment(title.getText().toString(),location.getText().toString(), gc, beschreibung.getText().toString(), picker.getValue());
+
+        new AsyncAddAppointment().execute(appointment);
 
 
     }

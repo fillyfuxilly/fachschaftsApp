@@ -10,7 +10,7 @@
     <string name="ter_text">Deine Termine findest du hier:</string>
     <string name="main_text">"Hier findet ihr Links mit den wichtigsten Infos für euch. Ihr könnt eure Termine einsehen und bekommt Infos zu den Orten an denen sie stattfinden."</string>
     <string name="set_name">Dein Name</string>
-    <string name="set_grp">Dein Gruppe</string>
+    <string name="set_grp">Deine Gruppe</string>
     <string name="info_text">Weitere Infos findest du hier:</string>
     <string name="logo_desc">Logo der Fachschaft</string>
     <string name="btn_ter_desc">Kalender Icon</string>
@@ -29,5 +29,12 @@
     <string name="map1">Hier findest du die Aaseerallye:</string>
     <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
     <string name="main_vf_desc">Das erwartet dich in der O-Woche:</string>
+    <string name="admin_title">Titel</string>
+    <string name="admin_location">Ort</string>
+    <string name="admin_desc">Beschreibung</string>
     <string name="o_woche">o-woche</string>
+    <string name="admin_button">Speichern</string>
+    <string name="admin_headline">Neuen Termin anlegen</string>
+    <string name="admin_gruppe">Gruppe (0 für alle):</string>
+
 </resources>
