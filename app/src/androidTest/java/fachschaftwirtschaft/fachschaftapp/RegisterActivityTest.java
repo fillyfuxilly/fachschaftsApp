@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.widget.NumberPicker;
+
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -50,9 +52,8 @@ public class RegisterActivityTest {
      */
     @Test
     public void test2SelectGroup()throws Exception {
-        onView(ViewMatchers.withId(R.id.spinner)).perform(click());
-        onData(allOf(is(instanceOf(String.class)), is("3"))).perform(click());
-        onView(ViewMatchers.withId(R.id.spinner)).check(matches(withSpinnerText(containsString("3"))));
+        onView(ViewMatchers.withId(R.id.numberPicker)).perform(click());
+        onView(ViewMatchers.withId(R.id.numberPicker)).perform(swipeDown());
     }
 
     /**
