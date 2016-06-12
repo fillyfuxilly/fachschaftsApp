@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class InfosActivity extends AppCompatActivity {
 
     //TextView tv; brauch ich vllt später nochma
-    Button zurueck_btn;
+    Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,8 @@ public class InfosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_infos);
 
         // zurueck zur Startseite
-        zurueck_btn = (Button) findViewById(R.id.zurueck);
-        zurueck_btn.setOnClickListener(new View.OnClickListener() {
+        backBtn = (Button) findViewById(R.id.back);
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( InfosActivity.this, MainActivity.class));

@@ -19,17 +19,15 @@
     <string name="yt_icon">YT Icon</string>
     <string name="clear_sharedprefs">Clear SharedPrefs</string>
     <string name="einstellungen">Einstellungen</string>
-    <string name="hier_kommen_dann_die_allgemeinen_infos">Hier kommen dann die allgemeinen Infos</string>
-    <string name="zurueck_btn">Zurück zur Startseite</string>
+    <string name="back_btn">Zurück zur Startseite</string>
     <string name="menu_admin">Administration</string>
     <string name="menu_register">Registrieren</string>
     <string name="links">Hier findet ihr die Links zu ein paar nützlichen Apps</string>
-    <string name="ueberschrift_termine">Deine nächsten Termine:</string>
+    <string name="title_appointments">Deine nächsten Termine:</string>
     <string name="link1">Link zur Mensa App</string>
     <string name="link2">Link zur Bus App</string>
     <string name="map1">Hier findest du die Aaseerallye:</string>
     <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
     <string name="main_vf_desc">Das erwartet dich in der O-Woche:</string>
     <string name="o_woche">o-woche</string>
-
 </resources>

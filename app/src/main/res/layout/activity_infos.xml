@@ -70,8 +70,8 @@
         android:layout_marginTop="2pt"/>
 
     <Button
-        android:text="@string/zurueck_btn"
-        android:id="@+id/zurueck"
+        android:text="@string/back_btn"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"

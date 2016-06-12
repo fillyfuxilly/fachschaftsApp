@@ -7,16 +7,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.NumberPicker;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import webService.User;
@@ -45,12 +41,6 @@ public class RegisterActivity extends Activity {
 
         b1=(Button)findViewById(R.id.button_r);
 
-/*
-        final Spinner dropdown = (Spinner)findViewById(R.id.spinner);
-        String[] items = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
-*/
         picker = (NumberPicker) findViewById(R.id.numberPicker);
 
         picker.setMinValue(1);
@@ -84,6 +74,7 @@ public class RegisterActivity extends Activity {
 
             editor.putString("nameKey", n);
             editor.putString("gruppeKey", Integer.toString(g));
+
             editor.apply();
 
             startActivity(new Intent(RegisterActivity.this, MainActivity.class));
