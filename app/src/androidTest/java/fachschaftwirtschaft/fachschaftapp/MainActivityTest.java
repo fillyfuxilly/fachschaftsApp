@@ -53,7 +53,7 @@ public class MainActivityTest  {
     public void test2ClickTermineButton() {
         try {
             Intents.init();
-            onView(withId(R.id.imageButton)).perform(click());
+            onView(withId(R.id.main_imageButton)).perform(click());
             //onView(withId(R.id.imageButton)).check(doesNotExist());
             intended(hasComponent(AppointmentsActivity.class.getName()));
         } catch(Exception e){e.printStackTrace();}
@@ -68,8 +68,8 @@ public class MainActivityTest  {
     @Test
     public void test3ClickInfosButton() {
 
-        onView(withId(R.id.imageButton_infos)).perform(click());
-        onView(withId(R.id.imageButton_infos)).check(doesNotExist());
+        onView(withId(R.id.main_imageButton2)).perform(click());
+        onView(withId(R.id.main_imageButton2)).check(doesNotExist());
 
     }
 
