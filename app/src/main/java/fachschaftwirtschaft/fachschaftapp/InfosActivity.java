@@ -1,6 +1,7 @@
 package fachschaftwirtschaft.fachschaftapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,19 @@ public class InfosActivity extends AppCompatActivity {
 
         //tv = (TextView) findViewById(R.id.info1); brauch ich später vllt nochma
 
+    }
+
+    public void startMsApp(View button){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://details?id=de.swms.muenster"));
+        startActivity(intent);
+    }
+
+    public void startMensaApp(View button){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://play.google.com/store/apps/details?id=de.malte.mensa"));
+        //intent.setData(Uri.parse("market://details?id=de.malte.mensa"));
+        startActivity(intent);
     }
 }
 
