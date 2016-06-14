@@ -7,7 +7,6 @@ import org.ksoap2.SoapEnvelope;
 import org.ksoap2.SoapFault;
 import org.ksoap2.serialization.MarshalDate;
 import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
@@ -19,7 +18,6 @@ import java.util.List;
 import java.util.Vector;
 
 import webService.Appointment;
-import webService.User;
 
 
 /**
@@ -35,8 +33,8 @@ public class ErstiHelferClient {
      * @param appointment Ein fertiger Termin wird der Methode übergeben
      * @return String, der per Toast ausgegeben wird, um den Nutzer über Erfolg oder Misserfolg zu informieren
      */
-    public static String addAppointment(Appointment appointment) {
-        String METHOD_NAME = "addAppointment";
+    public static String createAppointment(Appointment appointment) {
+        String METHOD_NAME = "createAppointment";
         SoapObject response = null;
         String back = "Serverfehler";
 
@@ -75,13 +73,13 @@ public class ErstiHelferClient {
             for(int i = 0; i<response.size();i++) {
                 Date date = new Date();
 
-                String description = response.get(i).getPrimitivePropertyAsString("beschreibung");
-                String location = response.get(i).getPrimitivePropertyAsString("ort");
-                String title = response.get(i).getPrimitivePropertyAsString("titel");
+                String description = response.get(i).getPrimitivePropertyAsString("description");
+                String location = response.get(i).getPrimitivePropertyAsString("location");
+                String title = response.get(i).getPrimitivePropertyAsString("title");
 
                 try {
                     DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-                    date = df.parse(response.get(i).getPrimitivePropertyAsString("zeitpunkt"));
+                    date = df.parse(response.get(i).getPrimitivePropertyAsString("startTime"));
                 } catch(Exception e) {e.printStackTrace();}
                 GregorianCalendar gc = new GregorianCalendar();
                 gc.setTime(date);

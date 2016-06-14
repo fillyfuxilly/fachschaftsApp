@@ -53,7 +53,7 @@ public class AdminActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Appointment... params) {
 
-            return ErstiHelferClient.addAppointment(params[0]);
+            return ErstiHelferClient.createAppointment(params[0]);
         }
 
         @Override
