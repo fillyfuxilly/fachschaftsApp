@@ -80,6 +80,7 @@
             android:padding="10dp"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:onClick="startInfos"
             android:contentDescription="@string/main_btn_desc"
             android:layout_gravity="center_horizontal" />
 

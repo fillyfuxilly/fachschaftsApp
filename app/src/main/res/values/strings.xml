@@ -19,6 +19,7 @@
     <string name="admin_button">Speichern</string>
     <string name="admin_headline">Neuen Termin anlegen</string>
     <string name="admin_gruppe">Gruppe (0 für alle):</string>
+    <string name="admin_pickTime">Wähle eine Startzeit</string>
 
     <string name="menu_admin">Administration</string>
     <string name="menu_register">Registrieren</string>
@@ -27,6 +28,8 @@
     <string name="settings_textView">Einstellungen</string>
 
 
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
     <string name="reg">Registrieren</string>
     <string name="d_name">Dein Name:</string>
     <string name="d_gruppe">Deine Gruppe:</string>

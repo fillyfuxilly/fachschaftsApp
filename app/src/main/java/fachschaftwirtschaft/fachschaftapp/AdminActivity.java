@@ -1,9 +1,15 @@
 package fachschaftwirtschaft.fachschaftapp;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewParent;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.NumberPicker;
@@ -22,6 +28,8 @@ public class AdminActivity extends AppCompatActivity {
 
     NumberPicker picker;
     TimePicker timePicker;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +68,7 @@ public class AdminActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
 
             Toast.makeText(AdminActivity.this, result, Toast.LENGTH_LONG).show();
+
             recreate();
         }
 
@@ -82,12 +91,12 @@ public class AdminActivity extends AppCompatActivity {
             Appointment appointment = new Appointment(title.getText().toString(), location.getText().toString(), gc, description.getText().toString(), picker.getValue());
 
             new AsyncAddAppointment().execute(appointment);
+
         } catch(NullPointerException e) {
             e.printStackTrace();
             Toast.makeText(AdminActivity.this, "Etwas ist schief gelaufen", Toast.LENGTH_LONG).show();
             recreate();
         }
-
-
     }
 }
+

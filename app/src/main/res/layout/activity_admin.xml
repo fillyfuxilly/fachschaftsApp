@@ -4,7 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/admin_scrollView">
+    android:id="@+id/admin_scrollView"
+    android:nestedScrollingEnabled="true">
 
     <GridLayout
         android:id="@+id/admin_gridView"
@@ -15,7 +16,8 @@
         android:stretchMode="columnWidth"
         android:gravity="center"
         android:columnOrderPreserved="false"
-        android:columnCount="2">
+        android:columnCount="2"
+        android:nestedScrollingEnabled="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,7 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/admin_title"
-                android:id="@+id/admin_editText"/>
+                android:id="@+id/admin_editText"
+                android:textIsSelectable="false" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -92,24 +95,31 @@
             android:layout_row="4"
             android:weightSum="2"
             android:layout_marginTop="10dp"
-            android:id="@+id/admin_linearLayout">
+            android:id="@+id/admin_linearLayout"
+            android:nestedScrollingEnabled="true">
 
-            <DatePicker
+            <fachschaftwirtschaft.fachschaftapp.MyDatePicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/admin_datePicker"
                 android:layout_weight="1"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="2dp" />
+                android:layout_marginEnd="2dp"
+                android:datePickerMode="calendar"
+                android:headerBackground="#20549f"
+                android:nestedScrollingEnabled="true" />
 
-            <TimePicker
+            <fachschaftwirtschaft.fachschaftapp.MyTimePicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/admin_timePicker"
                 android:layout_weight="1"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="5dp"
-                android:soundEffectsEnabled="true" />
+                android:headerBackground="#20549f"
+                android:nestedScrollingEnabled="true"
+                android:numbersSelectorColor="#20549f"
+                android:timePickerMode="clock" />
 
         </LinearLayout>
 
@@ -155,7 +165,8 @@
                     android:textColor="#ffffff"
                     android:onClick="newAppointment"
                     android:layout_gravity="center"
-                    android:layout_marginStart="180dp" />
+                    android:layout_marginStart="180dp"
+                    android:clickable="true" />
             </LinearLayout>
         </LinearLayout>
     </GridLayout>

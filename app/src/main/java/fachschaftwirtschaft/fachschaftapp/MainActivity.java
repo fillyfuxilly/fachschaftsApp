@@ -36,6 +36,26 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Layout geladen");
 
 
+        btn = (Button) findViewById(R.id.main_button_clear);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+                SharedPreferences.Editor e = sharedpreferences.edit();
+                e.clear();
+                e.apply();
+
+                Toast.makeText(MainActivity.this,"Daten gelöscht", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+        String name = sharedpreferences.getString("nameKey", "");
+
         /**
          * AsnyTask der prüft, ob der User sich bereits registriert hat. Falls ja wird MainActivity mit Funktionalität versehen.
          * Falls nein, dann wird der RegisterActivity Dialog gestartet.
@@ -59,33 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.d(TAG, "User bereits registriert");
 
-                    btn = (Button) findViewById(R.id.main_button_clear);
-
-                    btn.setOnClickListener(new View.OnClickListener() {
 
 
-                        @Override
-                        public void onClick(View v) {
-                            SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor e = sharedpreferences.edit();
-                            e.clear();
-                            e.apply();
-
-                            Toast.makeText(MainActivity.this,"Daten gelöscht", Toast.LENGTH_LONG).show();
-
-                        }
-                    });
-
-                    ibtn = (ImageButton) findViewById(R.id.main_imageButton2);
-
-                    ibtn.setOnClickListener(new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(MainActivity.this, InfosActivity.class));
-
-                        }
-                    });
                 } else {
 
                     Log.d(TAG, "User nicht registriert, starte RegisterActivity");
@@ -136,6 +131,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Startet InfosActivity
+     * @param button , der mit android:onClick im xml Layout eingebunden ist
+     */
+    public void startInfos (View button) {
+
+        Log.d(TAG, "Infos Button gedrückt");
+
+        startActivity(new Intent(MainActivity.this, InfosActivity.class));
+
+    }
     /**
      * Falls Youtube App installiert, starte Video in dieser, sonst Auswahlmenü
      * @param button , der mit android:onClick im xml Layout eingebunden ist
