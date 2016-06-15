@@ -20,6 +20,7 @@ public class AppointmentsActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_termine);
+
 //Zugriff ListView
 
 
@@ -44,6 +45,5 @@ public class AppointmentsActivity extends AppCompatActivity {
             }
         });
     }
-
 
 }

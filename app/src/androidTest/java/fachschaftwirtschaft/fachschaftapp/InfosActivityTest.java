@@ -29,7 +29,7 @@ public class InfosActivityTest {
     @Test
     public void testClickBackButton() throws Exception {
 
-        onView(withId(R.id.back)).perform(click());
+        onView(withId(R.id.back)).perform(scrollTo(), click());
         onView(withId(R.id.back)).check(doesNotExist());
 
     }

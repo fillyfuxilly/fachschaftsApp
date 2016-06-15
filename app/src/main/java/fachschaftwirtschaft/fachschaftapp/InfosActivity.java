@@ -6,12 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-// @author Wendy Frevert
+/**
+ *  @author Wendy Frevert
+ */
 public class InfosActivity extends AppCompatActivity {
 
-    //TextView tv; brauch ich vllt später nochma
     Button backBtn;
 
     @Override
@@ -28,7 +28,6 @@ public class InfosActivity extends AppCompatActivity {
             }
         });
 
-        //tv = (TextView) findViewById(R.id.info1); brauch ich später vllt nochma
 
     }
 
