@@ -29,7 +29,7 @@ public class AppointmentActivityTest {
     @Test
     public void testClickBackButton() throws Exception {
 
-        onView(withId(R.id.back)).perform(click());
+        onView(withId(R.id.back)).check(matches(isDisplayed())).perform(click());
         onView(withId(R.id.back)).check(doesNotExist());
 
     }

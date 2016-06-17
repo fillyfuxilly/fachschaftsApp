@@ -42,9 +42,9 @@ public class RegisterActivityTest {
     @Test
     public void test1TypeName() throws Exception {
 
-        onView(withId(R.id.editText)).perform(click());
-        onView(withId(R.id.editText)).perform(replaceText("Matthias"));
-        onView(withId(R.id.editText)).check(matches(withText("Matthias")));
+        onView(withId(R.id.register_editText)).perform(click());
+        onView(withId(R.id.register_editText)).perform(typeText("Matthias"));
+        onView(withId(R.id.register_editText)).check(matches(withText("Matthias")));
     }
 
     /**

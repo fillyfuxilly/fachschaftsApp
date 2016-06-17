@@ -50,7 +50,7 @@ public class MainActivityTest  {
      * Auf Termine klicken und Activity wechseln
      */
     @Test
-    public void test2ClickTermineButton() {
+    public void test2ClickAppointmentsButton() {
         try {
             Intents.init();
             onView(withId(R.id.main_imageButton)).perform(click());

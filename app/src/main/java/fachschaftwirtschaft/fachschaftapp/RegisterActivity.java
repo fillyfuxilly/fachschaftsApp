@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         Log.d(TAG, "Register Layout aufgebaut");
 
-        ed1=(EditText)findViewById(R.id.editText);
+        ed1=(EditText)findViewById(R.id.register_editText);
 
         b1=(Button)findViewById(R.id.button_r);
 

@@ -84,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/set_name"
-            android:id="@+id/editText"
+            android:id="@+id/register_editText"
             android:layout_alignParentEnd="false"
             android:layout_alignParentStart="false"
             android:layout_alignParentTop="false"
