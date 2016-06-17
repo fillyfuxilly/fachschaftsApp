@@ -2,22 +2,23 @@ package webService;
 
 import java.util.Collection;
 
-/**
- * Created by Turnus on 09.06.2016.
+/** Ein Objekt, dass als Nutzer beim WebService persistiert ist.
+ * @author Matthias Heinen
  */
 public class User {
 
-    private static final long serialVersionUID = 1L;
-    private int id;
-
-
+    /**
+     * Name des Nutzers.
+     */
     private String username;
-
+    /**
+     * Gruppennummer des Nutzers.
+     */
     private int groupNr;
+    /**
+     * Ist der Nutzer Administrator?.
+     */
     private boolean isAdmin;
-
-
-    private Collection<Appointment> appointments;
 
     public User() {
     }
@@ -34,14 +35,6 @@ public class User {
 
     public int getGroupNr() {
         return groupNr;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int userId) {
-        this.id = userId;
     }
 
     public boolean isAdmin() {

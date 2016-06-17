@@ -25,7 +25,7 @@ import webService.Appointment;
  * Steuert die Kommunikation mit einem Web Service
  * @author Matthias Heinen
  */
-public class ErstiHelferClient {
+public abstract class ErstiHelferClient {
 
     /**
      *  Feature-Toggle fuer die Verfuegbarkeit des Web Service.
@@ -254,7 +254,7 @@ public class ErstiHelferClient {
 
         } else {
 
-            return true;
+            return false;
         }
     }
 

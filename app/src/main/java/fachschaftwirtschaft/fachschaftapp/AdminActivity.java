@@ -119,8 +119,8 @@ public class AdminActivity extends BaseActivity {
         /**
          * Prueft, ob Verbindung zum Netzwerk besteht. Falls nein wird der Task nicht ausgefuehrt.
          */
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        networkInfo = connMgr.getActiveNetworkInfo();
 
         if (networkInfo != null && networkInfo.isConnected()) {
 

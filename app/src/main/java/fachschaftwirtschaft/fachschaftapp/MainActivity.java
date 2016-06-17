@@ -7,19 +7,14 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 
 /**
- * Zentrale Activity der App
+ * Startseite der App
  * @author Matthias Heinen
  */
 public class MainActivity extends BaseActivity {
@@ -70,7 +65,7 @@ public class MainActivity extends BaseActivity {
             @Override
             protected Boolean doInBackground(Void... params){
 
-                sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+                SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
                 String name = sharedpreferences.getString("nameKey", "");
 
                return name.equals("");
@@ -83,7 +78,6 @@ public class MainActivity extends BaseActivity {
                 if(!result) {
 
                     Log.d(TAG, "User bereits registriert");
-
 
 
                 } else {
@@ -120,7 +114,7 @@ public class MainActivity extends BaseActivity {
 
     }
     /**
-     * Falls Youtube App installiert, starte Video in dieser, sonst Auswahlmenü
+     * Falls die YouTube App installiert ist, wird das Video in dieser gestartet. Falls nicht, dann erscheint ein Auswahlmenue.
      * @param button , der mit android:onClick im xml Layout eingebunden ist
      */
     public void startVideo (View button) {
