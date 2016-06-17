@@ -19,13 +19,20 @@ import android.widget.Toast;
 
 
 /**
+ * Zentrale Activity der App
  * @author Matthias Heinen
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     Button btn;
-    ImageButton ibtn;
+    /**
+     * Konstante zum loggen.
+     */
     private static final String TAG = "MainActivity";
+    /**
+     * Lokaler Speicher zum Ablegen von Nutzername und Gruppennummer des Nutzers.
+     */
+    SharedPreferences sharedpreferences;
 
 
     @Override
@@ -43,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+                sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
                 SharedPreferences.Editor e = sharedpreferences.edit();
                 e.clear();
                 e.apply();
@@ -53,19 +60,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
-        String name = sharedpreferences.getString("nameKey", "");
+
 
         /**
-         * AsnyTask der prüft, ob der User sich bereits registriert hat. Falls ja wird MainActivity mit Funktionalität versehen.
-         * Falls nein, dann wird der RegisterActivity Dialog gestartet.
+         * AsnyTask der prueft, ob der User sich bereits registriert hat. Falls nein, dann wird der RegisterActivity Dialog gestartet.
          */
         class RegisteredTask extends AsyncTask<Void,Void,Boolean> {
 
             @Override
             protected Boolean doInBackground(Void... params){
 
-                SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+                sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
                 String name = sharedpreferences.getString("nameKey", "");
 
                return name.equals("");
@@ -89,34 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }new RegisteredTask().execute();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.settings) {
-            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-
-            return true;
-        }
-        if (id == R.id.admin) {
-            startActivity(new Intent(MainActivity.this, AdminActivity.class));
-
-            return true;
-        }
-        if (id == R.id.register) {
-            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     /**

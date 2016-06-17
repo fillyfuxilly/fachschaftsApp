@@ -12,7 +12,7 @@ import android.widget.EditText;
 /**
  * @author Matthias Heinen
  */
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends BaseActivity {
 
     SharedPreferences sharedpreferences;
     @Override

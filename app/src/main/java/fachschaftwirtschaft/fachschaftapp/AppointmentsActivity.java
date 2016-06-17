@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import webService.Appointment;
 
-public class AppointmentsActivity extends AppCompatActivity {
+public class AppointmentsActivity extends BaseActivity {
 
     Button backBtn;
     ListView listView;
