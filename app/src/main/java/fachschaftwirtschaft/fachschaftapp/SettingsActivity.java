@@ -40,7 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
-            ErstiHelferClient.getAppointments(3);
+            ErstiHelferClient.getAppointments(3, 3);
             return null;
         }
 
