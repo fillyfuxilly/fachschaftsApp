@@ -19,7 +19,7 @@ public class InfosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_infos);
 
-        // zurueck zur Startseite
+        /** zurueck zur Startseite */
         backBtn = (Button) findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,16 +31,17 @@ public class InfosActivity extends AppCompatActivity {
 
     }
 
+    /** Öffnet den Link zur Installation der "MünsterApp" direkt im Google Play Store */
     public void startMsApp(View button){
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("market://details?id=de.swms.muenster"));
         startActivity(intent);
     }
 
+    /** Öffnet den Link zur Installation der "MensaApp" im Browser */
     public void startMensaApp(View button){
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("http://play.google.com/store/apps/details?id=de.malte.mensa"));
-        //intent.setData(Uri.parse("market://details?id=de.malte.mensa"));
         startActivity(intent);
     }
 }

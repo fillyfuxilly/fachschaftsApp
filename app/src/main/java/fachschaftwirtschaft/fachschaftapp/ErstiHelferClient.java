@@ -76,10 +76,10 @@ public class ErstiHelferClient {
         if(WEBSERVICEISAVAILABLE) {
             String METHOD_NAME = "getAppointments";
             Vector<SoapObject> response = null;
-            Appointment[] appointments;
+            Appointment[] appointments  = new Appointment[5];
 
-            try {
-                response = executeSoapActionVector(METHOD_NAME, count, groupNr);
+            /*try {
+                 response = executeSoapActionVector(METHOD_NAME, count, groupNr);
 
                 appointments = new Appointment[response.size()];
 
@@ -101,13 +101,18 @@ public class ErstiHelferClient {
                     int group = Integer.parseInt(response.get(i).getPrimitivePropertyAsString("groupNr"));
 
                     appointments[i] = new Appointment(title, location, gc, description, group);
-                }
+                }*/
 
+                appointments[0] = new Appointment("Gastvortrag Dr.Acula", "Raum D227", null, "Zur Mittagsstunde gibt es einen spannenden Vortrag von Herrn Dr.Acula zu den ökonomischen Auswirkungen der Blutspende", 1);
+                appointments[1] = new Appointment("Aaseerallye", "Torminbrücke", null, "Wie ihr zur Torminbrücke kommt, könnt ihr in den Infos nachlesen", 1);
+                appointments[2] = new Appointment("Kulturprogramm", "Überwasserkirche", null, "Wir treffen uns vor der Überwasserkirche. Es geht dann weiter in kleinen Gruppen", 1);
+                appointments[3] = new Appointment("Frühstück", "Raum A004", null, "Kaffee und Brötchen zum Aufwachen und warm werden", 1);
+                appointments[4] = new Appointment("Rundgang Bib und Erstitaschen", "Vor Raum A004", null, "Eure Gruppenleiter zeigen euch kurz ein paar wichtige Ecken des FH-Gebäudes und die Bib", 1);
 
-            } catch (SoapFault e) {
+            /* } catch (SoapFault e) {
                 e.printStackTrace();
                 appointments = null;
-            }
+            } */
             return appointments;
         } else {
 
