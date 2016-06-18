@@ -39,7 +39,7 @@
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right" />
+            android:layout_gravity="end" />
 
         <ImageButton
             android:id="@+id/main_imageButton"
@@ -67,7 +67,7 @@
             android:layout_marginTop="60sp"
             android:layout_marginStart="60dp"
             android:textSize="18sp"
-            android:layout_gravity="right" />
+            android:layout_gravity="end" />
 
         <ImageButton
             android:id="@+id/main_imageButton2"
@@ -107,7 +107,7 @@
             android:layout_marginStart="60dp"
             android:textSize="18sp"
             android:text="@string/main_yt_video"
-            android:layout_gravity="right" />
+            android:layout_gravity="end" />
 
         <ImageButton
             android:layout_width="70dp"

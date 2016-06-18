@@ -56,7 +56,7 @@ public class SettingsActivity extends BaseActivity {
         }
 
 
-        btn = (Button) findViewById(R.id.settings_btn);
+        btn = (Button) findViewById(R.id.settings_button);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
