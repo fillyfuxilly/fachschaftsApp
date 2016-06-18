@@ -29,7 +29,7 @@ public class AppointmentsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_termine);
+        setContentView(R.layout.activity_appointments);
 
         Log.d(TAG, "Layout geladen");
 
