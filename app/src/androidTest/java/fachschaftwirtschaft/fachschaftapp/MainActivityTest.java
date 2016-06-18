@@ -21,7 +21,7 @@ import static android.support.test.espresso.intent.Intents.times;
 
 
 
-/** Instrumented Espresso Test für MainActivity.
+/** Instrumented Espresso Test fuer MainActivity.
  * @author Matthias Heinen
  */
 @RunWith(AndroidJUnit4.class)

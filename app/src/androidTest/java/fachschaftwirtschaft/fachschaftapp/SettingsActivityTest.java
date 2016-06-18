@@ -5,27 +5,27 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.test.espresso.UiController;
 import android.support.test.espresso.ViewAction;
-import android.support.test.espresso.intent.Intents;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 import android.widget.NumberPicker;
+
 import org.hamcrest.Matcher;
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.*;
 import static android.support.test.espresso.assertion.ViewAssertions.*;
-import static android.support.test.espresso.intent.Intents.intended;
-import static android.support.test.espresso.intent.Intents.times;
-import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
 
-/** Instrumented Espresso Test für SettingsActivity
+/**
+ * Instrumented Espresso Test für SettingsActivity
+ *
  * @author Matthias Heinen
  */
 @RunWith(AndroidJUnit4.class)
@@ -37,6 +37,7 @@ public class SettingsActivityTest {
 
     /**
      * Methode, um bei einem NumberPicker eine Zahl zu setzen.
+     *
      * @param number Zahl die gesetzt werden soll.
      * @return ViewAction
      */
@@ -86,10 +87,11 @@ public class SettingsActivityTest {
      * Prueft, ob User erfolgreich ihre Gruppe wechseln koennen.
      */
     @Test
-    public void test3CeckGroupChange() {
+    public void test3CheckGroupChange() {
+
         onView(withId(R.id.settings_numberPicker)).perform(selectCurrentNumber(2));
         onView(withId(R.id.settings_btn)).check(matches(isDisplayed())).perform(click());
-        onView(withId(R.id.settings_textView4)).check(matches(isDisplayed())).check(matches(withText("2")));
+
     }
 
     /**
