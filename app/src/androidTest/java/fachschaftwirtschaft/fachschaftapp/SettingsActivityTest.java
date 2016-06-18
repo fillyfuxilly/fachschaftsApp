@@ -88,7 +88,7 @@ public class SettingsActivityTest {
     @Test
     public void test3CeckGroupChange() {
         onView(withId(R.id.settings_numberPicker)).perform(selectCurrentNumber(2));
-        onView(withId(R.id.settings_btn)).perform(click());
+        onView(withId(R.id.settings_btn)).check(matches(isDisplayed())).perform(click());
         onView(withId(R.id.settings_textView4)).check(matches(isDisplayed())).check(matches(withText("2")));
     }
 

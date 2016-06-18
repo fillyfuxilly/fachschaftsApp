@@ -24,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * Erstellt ein Menue.
-     * @param menu Ein Menue für Activities
+     * @param menu Ein Menue fuer Activities
      * @return Nach erfolgreicher Erzeugung wird true ausgegeben.
      */
     @Override
