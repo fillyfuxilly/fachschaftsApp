@@ -136,15 +136,17 @@ public abstract class ErstiHelferClient {
 
         } else {
 
+            GregorianCalendar gc1 = new GregorianCalendar(2016, 10, 3, 12, 0);
+            GregorianCalendar gc2 = new GregorianCalendar(2016, 10, 3, 14, 30);
+            GregorianCalendar gc3 = new GregorianCalendar(2016, 10, 3, 19, 0);
+            GregorianCalendar gc4 = new GregorianCalendar(2016, 10, 4, 9, 0);
+            GregorianCalendar gc5= new GregorianCalendar(2016, 10, 4, 11, 0);
 
-            /*  Hier musst du erst 5 appointment Objekte erstellen, diese dann zum Array hinzufügen
-                und dann kannst du mit, wenn du die Methode in der AppointmentActivity aufrust
-            */
-            appointments[0] = new Appointment("Gastvortrag Dr.Acula", "Raum D227", null, "Zur Mittagsstunde gibt es einen spannenden Vortrag von Herrn Dr.Acula zu den ökonomischen Auswirkungen der Blutspende", 1);
-            appointments[1] = new Appointment("Aaseerallye", "Torminbrücke", null, "Wie ihr zur Torminbrücke kommt, könnt ihr in den Infos nachlesen", 1);
-            appointments[2] = new Appointment("Kulturprogramm", "Überwasserkirche", null, "Wir treffen uns vor der Überwasserkirche. Es geht dann weiter in kleinen Gruppen", 1);
-            appointments[3] = new Appointment("Frühstück", "Raum A004", null, "Kaffee und Brötchen zum Aufwachen und warm werden", 1);
-            appointments[4] = new Appointment("Rundgang Bib und Erstitaschen", "Vor Raum A004", null, "Eure Gruppenleiter zeigen euch kurz ein paar wichtige Ecken des FH-Gebäudes und die Bib", 1);
+            appointments[0] = new Appointment("Gastvortrag Dr.Acula", "Raum D227", gc1, "Zur Mittagsstunde gibt es einen spannenden Vortrag von Herrn Dr.Acula zu den ökonomischen Auswirkungen der Blutspende", 1);
+            appointments[1] = new Appointment("Aaseerallye", "Torminbrücke", gc2, "Wie ihr zur Torminbrücke kommt, könnt ihr in den Infos nachlesen", 1);
+            appointments[2] = new Appointment("Kulturprogramm", "Überwasserkirche", gc3, "Wir treffen uns vor der Überwasserkirche. Es geht dann weiter in kleinen Gruppen", 1);
+            appointments[3] = new Appointment("Frühstück", "Raum A004", gc4, "Kaffee und Brötchen zum Aufwachen und warm werden", 1);
+            appointments[4] = new Appointment("Rundgang Bib und Erstitaschen", "Vor Raum A004", gc5, "Eure Gruppenleiter zeigen euch kurz ein paar wichtige Ecken des FH-Gebäudes und die Bib", 1);
 
         }
             return appointments;

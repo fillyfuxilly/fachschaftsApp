@@ -2,6 +2,7 @@ package fachschaftwirtschaft.fachschaftapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -24,8 +25,6 @@ public class AppointmentsActivity extends BaseActivity {
     Button backBtn;
     ListView listView;
     String[] list = new String[5];
-    int group = 1; //Gruppennr aus shared prefs kann ich morgen nochma einfügen.Bin noch nich dazu gekommen zu testen, ob ichs fehlerfrei hinbekommen hab
-    int t = 10;  //Gregorian Calendar is **** . Ich hab nich gefunden, wie der default wert aussehn soll.. also hab ich mir selbst ne Uhrzeit gemacht.
     private static final String TAG = "AppointmentActivity";
 
     @Override
@@ -41,10 +40,22 @@ public class AppointmentsActivity extends BaseActivity {
                 @Override
                 protected Boolean doInBackground(Void... params) {
                     try {
+                        SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+                        int group = Integer.parseInt(sharedpreferences.getString("gruppeKey", ""));
+
                         Appointment[] a = ErstiHelferClient.getAppointments(5, group);
 
                         for (int i = 0; i < a.length; i++) {
-                            list[i] = "\n" + (t+i) + ":00" + "      |       " + a[i].getLocation() + "         |        " +a[i].getTitle()+ "\n\n"+a[i].getDescription() + "\n";
+                            /** Gregorian Calendar Minutes ist ein Integer, deshalb muss für die Darstellung der Zeit eine Null hinzugefügt werden, wenn der Wert < 10 ist.*/
+                            String gcm;
+
+                            if (a[i].getDate().getTime().getMinutes() < 10) {
+                                gcm = ":0";
+                            }
+                            else{
+                                gcm = ":";
+                            }
+                            list[i] = a[i].getDate().getTime().getHours() + gcm + a[i].getDate().getTime().getMinutes() + "      |       " + a[i].getLocation() + "         |        " + a[i].getTitle() + "\n\n" + a[i].getDescription() + "\n";
                         }
 
                         Log.d(TAG, "Termine wurden geladen");
@@ -74,7 +85,7 @@ public class AppointmentsActivity extends BaseActivity {
                             ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-                if (networkInfo != null && networkInfo.isConnected()) {
+        if (networkInfo != null && networkInfo.isConnected()) {
                     new ScheduledTask().execute();
                 } else {
                     Log.d(TAG, "Keine Internetverbindung");
