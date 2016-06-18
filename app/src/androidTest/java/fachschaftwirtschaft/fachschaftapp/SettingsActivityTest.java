@@ -90,7 +90,7 @@ public class SettingsActivityTest {
     public void test3CheckGroupChange() {
 
         onView(withId(R.id.settings_numberPicker)).perform(selectCurrentNumber(2));
-        onView(withId(R.id.settings_btn)).check(matches(isDisplayed())).perform(click());
+        onView(withId(R.id.settings_btn)).perform(click());
 
     }
 
