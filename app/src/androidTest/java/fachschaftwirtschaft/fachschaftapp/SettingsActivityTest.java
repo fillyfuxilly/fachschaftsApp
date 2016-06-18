@@ -24,7 +24,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.*;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
 
 /**
- * Instrumented Espresso Test für SettingsActivity
+ * Instrumented Espresso Test fuer SettingsActivity
  *
  * @author Matthias Heinen
  */
@@ -88,14 +88,12 @@ public class SettingsActivityTest {
      */
     @Test
     public void test3CheckGroupChange() {
-
         onView(withId(R.id.settings_numberPicker)).perform(selectCurrentNumber(2));
         onView(withId(R.id.settings_btn)).perform(click());
-
     }
 
     /**
-     * SharedPreferences zurücksetzen.
+     * SharedPreferences wieder zuruecksetzen.
      */
     @Test
     public void test4ClearSharedPrefs() {
