@@ -5,10 +5,9 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+import android.view.*;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -79,7 +78,7 @@ public class AppointmentsActivity extends BaseActivity {
                     new ScheduledTask().execute();
                 } else {
                     Log.d(TAG, "Keine Internetverbindung");
-                    Toast.makeText(AppointmentsActivity.this, "Verbindung zum Internet benötigt", Toast.LENGTH_LONG).show();
+
                 }
 
 
