@@ -1,6 +1,5 @@
 package webService;
 
-import java.util.Collection;
 
 /** POJO, dass als Nutzer beim WebService persistiert ist.
  * @author Matthias Heinen
@@ -11,6 +10,7 @@ public class User {
      * Name des Nutzers.
      */
     private String username;
+
     /**
      * Gruppennummer des Nutzers.
      */
@@ -41,7 +41,15 @@ public class User {
         return isAdmin;
     }
 
-    public void setAdmin(boolean isAdmin) {
+    public void setIsAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
+    }
+
+    public void setGroupNr(int groupNr) {
+        this.groupNr = groupNr;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
