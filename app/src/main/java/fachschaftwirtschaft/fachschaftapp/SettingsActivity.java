@@ -4,7 +4,6 @@ package fachschaftwirtschaft.fachschaftapp;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,7 +11,7 @@ import android.widget.EditText;
 /**
  * @author Matthias Heinen
  */
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends BaseActivity {
 
     SharedPreferences sharedpreferences;
     @Override
@@ -27,7 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
         name.setText(sharedpreferences.getString("nameKey", ""));
 
         EditText gruppe = (EditText) findViewById(R.id.settingsEditText2);
-        gruppe.setText(sharedpreferences.getString("gruppeKey", ""));
+        gruppe.setText(sharedpreferences.getString("groupKey", ""));
 
     }
 

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.ViewParent;
 import android.widget.TimePicker;
 
-/** Da der TimePicker in AdminActivity innerhalb eines ScrollView liegt, muss eine Methode überschrieben werden, um innerhalb des View scrollen zu können
+/** Da der TimePicker in AdminActivity innerhalb eines ScrollView liegt, muss eine Methode ueberschrieben werden, um innerhalb des View scrollen zu koennen
  * @author Matthias Heinen
  */
 public class MyTimePicker extends TimePicker {

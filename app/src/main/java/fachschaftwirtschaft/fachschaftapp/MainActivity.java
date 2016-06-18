@@ -7,25 +7,27 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 
 /**
+ * Startseite der App
  * @author Matthias Heinen
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     Button btn;
-    ImageButton ibtn;
+    /**
+     * Konstante zum loggen.
+     */
     private static final String TAG = "MainActivity";
+    /**
+     * Lokaler Speicher zum Ablegen von Nutzername und Gruppennummer des Nutzers.
+     */
+    SharedPreferences sharedpreferences;
 
 
     @Override
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
+                sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
                 SharedPreferences.Editor e = sharedpreferences.edit();
                 e.clear();
                 e.apply();
@@ -53,12 +55,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
-        String name = sharedpreferences.getString("nameKey", "");
+
 
         /**
-         * AsnyTask der prüft, ob der User sich bereits registriert hat. Falls ja wird MainActivity mit Funktionalität versehen.
-         * Falls nein, dann wird der RegisterActivity Dialog gestartet.
+         * AsnyTask der prueft, ob der User sich bereits registriert hat. Falls nein, dann wird der RegisterActivity Dialog gestartet.
          */
         class RegisteredTask extends AsyncTask<Void,Void,Boolean> {
 
@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "User bereits registriert");
 
 
-
                 } else {
 
                     Log.d(TAG, "User nicht registriert, starte RegisterActivity");
@@ -89,34 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }new RegisteredTask().execute();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.settings) {
-            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-
-            return true;
-        }
-        if (id == R.id.admin) {
-            startActivity(new Intent(MainActivity.this, AdminActivity.class));
-
-            return true;
-        }
-        if (id == R.id.register) {
-            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     /**
@@ -143,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     /**
-     * Falls Youtube App installiert, starte Video in dieser, sonst Auswahlmenü
+     * Falls die YouTube App installiert ist, wird das Video in dieser gestartet. Falls nicht, dann erscheint ein Auswahlmenue.
      * @param button , der mit android:onClick im xml Layout eingebunden ist
      */
     public void startVideo (View button) {

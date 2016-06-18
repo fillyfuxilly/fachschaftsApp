@@ -3,16 +3,30 @@ package webService;
 import java.util.GregorianCalendar;
 
 /**
+ * Ein Objekt, dass als Termin beim WebService persistiert ist.
  * @author Matthias Heinen
  *
- * Ein Objekt, dass als Termin beim WebService persistiert ist.
  */
 public class Appointment {
-
+    /**
+     * Titel des Termins
+     */
     private String title;
+    /**
+     * Ort des Termins
+     */
     private String location;
+    /**
+     * Datum des Termins
+     */
     private GregorianCalendar date;
+    /**
+     * Beschreibung des Termins
+     */
     private String description;
+    /**
+     * Gruppennummer des Termins, 0 fuer alle Gruppen
+     */
     private int groupNr;
 
     public Appointment() {

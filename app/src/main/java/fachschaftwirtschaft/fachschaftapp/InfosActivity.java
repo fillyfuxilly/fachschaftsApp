@@ -10,7 +10,7 @@ import android.widget.Button;
 /**
  *  @author Wendy Frevert
  */
-public class InfosActivity extends AppCompatActivity {
+public class InfosActivity extends BaseActivity {
 
     Button backBtn;
 

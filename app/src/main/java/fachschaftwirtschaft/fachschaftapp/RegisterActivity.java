@@ -1,7 +1,6 @@
 
 package fachschaftwirtschaft.fachschaftapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,17 +19,35 @@ import android.widget.Toast;
 
 import webService.User;
 
-/**
+/** Nutzer koennen sich hier beim Web Service registrieren.
  * @author Matthias Heinen
  */
 public class RegisterActivity extends AppCompatActivity {
 
+    /**
+     * Username View
+     */
     EditText ed1;
+    /**
+     * Button to register
+     */
     Button b1;
     SharedPreferences sharedpreferences;
+    /**
+     * Konstante zum loggen.
+     */
     private static final String TAG = "RegisterActivity";
-    String n;
-    int g;
+    /**
+     * Username
+     */
+    String name;
+    /**
+     * Gruppennummer
+     */
+    int group;
+    /**
+     * Picker um die Gruppennummer zu waehlen.
+     */
     NumberPicker picker;
 
     @Override
@@ -46,9 +63,16 @@ public class RegisterActivity extends AppCompatActivity {
 
         picker = (NumberPicker) findViewById(R.id.numberPicker);
 
-        picker.setMinValue(1);
-        picker.setMaxValue(10);
-        picker.setWrapSelectorWheel(false);
+        try {
+            picker.setMinValue(1);
+            picker.setMaxValue(10);
+            picker.setWrapSelectorWheel(false);
+        } catch(NullPointerException e) {
+            e.printStackTrace();
+            Log.e(TAG, "Problem mit dem Picker");
+            Toast.makeText(RegisterActivity.this, "Etwas ist schief gelaufen", Toast.LENGTH_LONG).show();
+            recreate();
+        }
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,15 +81,15 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.d(TAG, "Register Button gedrückt");
 
                 sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
-                n  = ed1.getText().toString();
-                g  = picker.getValue();
+                name  = ed1.getText().toString();
+                group  = picker.getValue();
 
 
                 ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
                 if (networkInfo != null && networkInfo.isConnected()) {
-                    new AsyncRegisterNewUser().execute(new User(n, g));
+                    new AsyncRegisterNewUser().execute(new User(name, group));
                 } else {
                     Log.d(TAG, "Keine Internetverbindung");
                     Toast.makeText(RegisterActivity.this, "Verbindung zum Internet benötigt", Toast.LENGTH_LONG).show();
@@ -76,6 +100,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * AsyncTask um einen neuen User beim Web Service zu registrieren.
+     */
     private class AsyncRegisterNewUser extends AsyncTask<User, Void, String> {
         @Override
         protected String doInBackground(User... params) {
@@ -84,18 +112,21 @@ public class RegisterActivity extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(String result) {
-            SharedPreferences.Editor editor = sharedpreferences.edit();
 
-            editor.putString("nameKey", n);
-            editor.putString("gruppeKey", Integer.toString(g));
+            if(!result.equals("Serverfehler")) {
+                SharedPreferences.Editor editor = sharedpreferences.edit();
 
-            editor.apply();
+                editor.putString("nameKey", name);
+                editor.putString("groupKey", Integer.toString(group));
 
-            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                editor.apply();
+
+                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+
+            }
+
             Toast.makeText(RegisterActivity.this, result, Toast.LENGTH_LONG).show();
-
-            Log.d(TAG, "Erfolgreich registriert");
-
+            Log.d(TAG, result);
         }
     }
 }

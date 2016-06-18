@@ -1,7 +1,6 @@
 package fachschaftwirtschaft.fachschaftapp;
 
 
-
 import org.ksoap2.HeaderProperty;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.SoapFault;
@@ -12,6 +11,7 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -22,44 +22,55 @@ import webService.Appointment;
 
 
 /**
+ * Steuert die Kommunikation mit einem Web Service
  * @author Matthias Heinen
  */
-public class ErstiHelferClient {
+public abstract class ErstiHelferClient {
 
     /**
-     *  Feature-Toggle, da der Web Service nicht verfügbar ist.
+     * Feature-Toggle fuer die Verfuegbarkeit des Web Service.
      */
     private static final boolean WEBSERVICEISAVAILABLE = false;
+    /**
+     * Namespace des Web Service
+     */
     private static final String NAMESPACE = "http://erstihelfer.erstihelfer.de/";
+    /**
+     * URL des Web Service
+     */
     private static final String URL = "http://10.0.2.2:8080/erstihelfer/ErstiHelferOnlineIntegration";
 
     /**
-     * Speichert einen neuen Termin beim Web Service
-     * @param appointment Ein fertiger Termin wird der Methode übergeben
-     * @return String, der per Toast ausgegeben wird, um den Nutzer über Erfolg oder Misserfolg zu informieren
+     * Speichert einen neuen Termin beim Web Service.
+     *
+     * @param appointment Ein fertiger Termin wird der Methode uebergeben
+     * @return String, der per Toast ausgegeben wird, um den Nutzer ueber Erfolg oder Misserfolg zu informieren
      */
     public static String createAppointment(Appointment appointment) {
 
-        if(WEBSERVICEISAVAILABLE) {
+        if (WEBSERVICEISAVAILABLE) {
+
             String METHOD_NAME = "createAppointment";
             SoapObject response = null;
             String back = "Serverfehler";
 
             try {
+
                 response = executeSoapAction(METHOD_NAME, appointment.getTitle(), appointment.getLocation(), appointment.getDate().getTime(),
                         appointment.getDescription(), appointment.getGroupNr());
 
 
             } catch (SoapFault e) {
+
                 e.printStackTrace();
             }
-            try {
-                back = response.getPrimitivePropertyAsString("text");
 
-            } catch (NullPointerException e) {
-                e.printStackTrace();
+            if (Integer.parseInt(response.getPrimitivePropertyAsString("returnCode")) == 201) {
+
+                back = response.getPrimitivePropertyAsString("text");
             }
             return back;
+
         } else {
 
             return "Erfolgreich erstellt";
@@ -67,23 +78,31 @@ public class ErstiHelferClient {
     }
 
     /**
-     * Holt einen Termine Vector vom Web Service, basierend auf der eingegeben Gruppennummer
-     * @param groupNr Gruppennummer der gewünschten Termine
-     * @return Gibt ein Array aus Terminen zurück
+     * Holt einen Termine Vector vom Web Service, basierend auf der eingegeben Gruppennummer und wandelt ihn in ein Array um.
+     *
+     * @param count   Anzahl der zu holenden folgenden Termine.
+     * @param groupNr Gruppennummer der gewuenschten Termine.
+     * @return Gibt ein Array aus Terminen zurueck.
      */
     public static Appointment[] getAppointments(int count, int groupNr) {
 
-        if(WEBSERVICEISAVAILABLE) {
+        Appointment[] appointments = new Appointment[5]; //Sorry, Matthias, musste ich hier deklarieren, weil das sonst mit meinen selbsterstellten Appointments nich klappt. W
+
+        if (WEBSERVICEISAVAILABLE) {
+
             String METHOD_NAME = "getAppointments";
             Vector<SoapObject> response = null;
-            Appointment[] appointments  = new Appointment[5];
 
-            /*try {
-                 response = executeSoapActionVector(METHOD_NAME, count, groupNr);
+
+            try {
+
+                response = executeSoapActionVector(METHOD_NAME, count, groupNr);
+
 
                 appointments = new Appointment[response.size()];
 
                 for (int i = 0; i < response.size(); i++) {
+
                     Date date = new Date();
 
                     String description = response.get(i).getPrimitivePropertyAsString("description");
@@ -91,41 +110,47 @@ public class ErstiHelferClient {
                     String title = response.get(i).getPrimitivePropertyAsString("title");
 
                     try {
+
                         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
                         date = df.parse(response.get(i).getPrimitivePropertyAsString("startTime"));
-                    } catch (Exception e) {
+
+                    } catch (ParseException e) {
+
                         e.printStackTrace();
                     }
+
                     GregorianCalendar gc = new GregorianCalendar();
                     gc.setTime(date);
                     int group = Integer.parseInt(response.get(i).getPrimitivePropertyAsString("groupNr"));
 
                     appointments[i] = new Appointment(title, location, gc, description, group);
-                }*/
+                }
 
-                appointments[0] = new Appointment("Gastvortrag Dr.Acula", "Raum D227", null, "Zur Mittagsstunde gibt es einen spannenden Vortrag von Herrn Dr.Acula zu den ökonomischen Auswirkungen der Blutspende", 1);
-                appointments[1] = new Appointment("Aaseerallye", "Torminbrücke", null, "Wie ihr zur Torminbrücke kommt, könnt ihr in den Infos nachlesen", 1);
-                appointments[2] = new Appointment("Kulturprogramm", "Überwasserkirche", null, "Wir treffen uns vor der Überwasserkirche. Es geht dann weiter in kleinen Gruppen", 1);
-                appointments[3] = new Appointment("Frühstück", "Raum A004", null, "Kaffee und Brötchen zum Aufwachen und warm werden", 1);
-                appointments[4] = new Appointment("Rundgang Bib und Erstitaschen", "Vor Raum A004", null, "Eure Gruppenleiter zeigen euch kurz ein paar wichtige Ecken des FH-Gebäudes und die Bib", 1);
+            } catch (SoapFault e) {
 
-            /* } catch (SoapFault e) {
                 e.printStackTrace();
                 appointments = null;
-            } */
-            return appointments;
+
+                return appointments;
+            }
+
         } else {
 
-            Appointment[] appointments = new Appointment[5];
 
             /*  Hier musst du erst 5 appointment Objekte erstellen, diese dann zum Array hinzufügen
                 und dann kannst du mit, wenn du die Methode in der AppointmentActivity aufrust
             */
+            appointments[0] = new Appointment("Gastvortrag Dr.Acula", "Raum D227", null, "Zur Mittagsstunde gibt es einen spannenden Vortrag von Herrn Dr.Acula zu den ökonomischen Auswirkungen der Blutspende", 1);
+            appointments[1] = new Appointment("Aaseerallye", "Torminbrücke", null, "Wie ihr zur Torminbrücke kommt, könnt ihr in den Infos nachlesen", 1);
+            appointments[2] = new Appointment("Kulturprogramm", "Überwasserkirche", null, "Wir treffen uns vor der Überwasserkirche. Es geht dann weiter in kleinen Gruppen", 1);
+            appointments[3] = new Appointment("Frühstück", "Raum A004", null, "Kaffee und Brötchen zum Aufwachen und warm werden", 1);
+            appointments[4] = new Appointment("Rundgang Bib und Erstitaschen", "Vor Raum A004", null, "Eure Gruppenleiter zeigen euch kurz ein paar wichtige Ecken des FH-Gebäudes und die Bib", 1);
 
+        }
             return appointments;
 
         }
-    }
+
 
     /**
      * Registriert einen neuen Nutzer beim Web Service
@@ -134,59 +159,87 @@ public class ErstiHelferClient {
      * @return String, der per Toast ausgegeben wird, um den Nutzer über Erfolg oder Misserfolg zu informieren
      */
     public static String registerNewUser(String userName, int groupNr) {
+
         if(WEBSERVICEISAVAILABLE) {
+
             String METHOD_NAME = "registerNewUser";
             SoapObject response = null;
             String back = "Serverfehler";
 
             try {
+
                 response = executeSoapAction(METHOD_NAME, userName, groupNr);
 
             } catch (SoapFault e) {
+
                 e.printStackTrace();
+
             }
             try {
+
                 back = response.getPrimitivePropertyAsString("text");
 
             } catch (NullPointerException e) {
+
                 e.printStackTrace();
             }
+
             return back;
+
         } else {
 
             return "Erfolgreich registriert";
         }
     }
 
+    /**
+     * Erlaubt es dem Nutzer seine Gruppe zu wechseln.
+     * @param userName Name des Nutzers
+     * @param groupNr Neue Gruppennummer des Nutzers
+     * @return String, der per Toast ausgegeben wird, um den Nutzer ueber Erfolg oder Misserfolg zu informieren
+     */
     public static String changeGroup(String userName, int groupNr) {
 
         if(WEBSERVICEISAVAILABLE) {
+
             String METHOD_NAME = "changeGroup";
             SoapObject response = null;
             String back = "Serverfehler";
 
             try {
+
                 response = executeSoapAction(METHOD_NAME, userName, groupNr);
 
             } catch (SoapFault e) {
+
                 e.printStackTrace();
+
             }
             try {
+
                 back = response.getPrimitivePropertyAsString("text");
 
             } catch (NullPointerException e) {
+
                 e.printStackTrace();
             }
             return back;
+
         } else {
 
             return "Gruppe erfolgreich gewechselt";
         }
     }
 
+    /**
+     * Prueft, ob ein Nutzer ein Admin ist.
+     * @param userName Name des Nutzers
+     * @return boolean isAdmin
+     */
     public static boolean isAdmin(String userName) {
 
         if(WEBSERVICEISAVAILABLE) {
+
             String METHOD_NAME = "changeGroup";
             SoapPrimitive response = null;
 
@@ -194,26 +247,31 @@ public class ErstiHelferClient {
                 response = executeSoapActionPrimitive(METHOD_NAME, userName);
 
             } catch (SoapFault e) {
+
                 e.printStackTrace();
             }
             try {
+
                 return Boolean.parseBoolean(response.toString());
 
             } catch (NullPointerException e) {
+
                 e.printStackTrace();
             }
+
             return false;
+
         } else {
 
-            return true;
+            return false;
         }
     }
 
 
 
     /**
-     * Mit dieser Methode kann man Methoden des Web Service mit komplexen Rückgabeparametern nutzen.
-     * @param methodName
+     * Mit dieser Methode kann man Methoden des Web Service mit komplexen Rueckgabeparametern nutzen.
+     * @param methodName Name der Methode die Angesprochen werden soll.
      * @return SoapObject
      */
     private static SoapObject executeSoapAction(String methodName, Object... args) throws SoapFault {
@@ -275,8 +333,8 @@ public class ErstiHelferClient {
 
 
     /**
-     * Mit dieser Methode kann man Methoden des Web Service mit primitiven Rückgabeparametern nutzen.
-     * @param methodName
+     * Mit dieser Methode kann man Methoden des Web Service mit primitiven Rueckgabeparametern nutzen.
+     * @param methodName Name der Methode die Angesprochen werden soll.
      * @return SoapPrimitive
      */
     private static SoapPrimitive executeSoapActionPrimitive(String methodName, Object... args) throws SoapFault {
@@ -337,8 +395,8 @@ public class ErstiHelferClient {
     }
 
     /**
-     * Mit dieser Methode kann man Methoden des Web Service mit Vector Rückgabeparametern nutzen.
-     * @param methodName
+     * Mit dieser Methode kann man Methoden des Web Service mit Vector Rueckgabeparametern nutzen.
+     * @param methodName Name der Methode die Angesprochen werden soll.
      * @return Vector<SoapObject>
      */
     private static Vector<SoapObject> executeSoapActionVector(String methodName, Object... args) throws SoapFault {

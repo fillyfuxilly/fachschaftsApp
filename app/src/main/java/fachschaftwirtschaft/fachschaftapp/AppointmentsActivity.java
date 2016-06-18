@@ -20,13 +20,13 @@ import webService.Appointment;
  * @author Wendy Frevert
  */
 
-public class AppointmentsActivity extends AppCompatActivity {
+public class AppointmentsActivity extends BaseActivity {
 
     Button backBtn;
     ListView listView;
     String[] list = new String[5];
-    int group = 1;
-    int t = 10;
+    int group = 1; //Gruppennr aus shared prefs kann ich morgen nochma einfügen.Bin noch nich dazu gekommen zu testen, ob ichs fehlerfrei hinbekommen hab
+    int t = 10;  //Gregorian Calendar is **** . Ich hab nich gefunden, wie der default wert aussehn soll.. also hab ich mir selbst ne Uhrzeit gemacht.
     private static final String TAG = "AppointmentActivity";
 
     @Override
@@ -36,7 +36,7 @@ public class AppointmentsActivity extends AppCompatActivity {
 
         Log.d(TAG, "Layout geladen");
 
-            //AsyncTask zum Abruf der Termine
+            /** AsyncTask zum Abruf der Termine */
             class ScheduledTask extends AsyncTask<Void,Void,Boolean> {
 
                 @Override
