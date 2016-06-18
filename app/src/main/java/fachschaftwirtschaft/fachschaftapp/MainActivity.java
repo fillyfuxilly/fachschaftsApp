@@ -51,6 +51,7 @@ public class MainActivity extends BaseActivity {
                 e.apply();
 
                 Toast.makeText(MainActivity.this,"Daten gelöscht", Toast.LENGTH_LONG).show();
+                recreate();
 
             }
         });

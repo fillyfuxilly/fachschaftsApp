@@ -24,7 +24,6 @@ import webService.Appointment;
  */
 public class AdminActivity extends BaseActivity {
 
-
     /**
      * Eingabefeld fuer den Titel des Termins.
      */
@@ -62,29 +61,35 @@ public class AdminActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+
+
 
         Log.d(TAG, "Layout geladen");
 
 
-        numberPicker = (NumberPicker) findViewById(R.id.admin_numberPicker);
+
+            numberPicker = (NumberPicker) findViewById(R.id.admin_numberPicker);
 
 
-        timePicker = (TimePicker) findViewById(R.id.admin_timePicker);
+            timePicker = (TimePicker) findViewById(R.id.admin_timePicker);
 
+            try {
+                timePicker.setIs24HourView(true);
+                numberPicker.setMinValue(0);
+                numberPicker.setMaxValue(10);
+                numberPicker.setWrapSelectorWheel(false);
 
-        try {
-            timePicker.setIs24HourView(true);
-            numberPicker.setMinValue(0);
-            numberPicker.setMaxValue(10);
-            numberPicker.setWrapSelectorWheel(false);
-        } catch(NullPointerException e) {
-            e.printStackTrace();
-            Log.e(TAG, "Problem mit den Pickern");
-            Toast.makeText(AdminActivity.this, "Etwas ist schief gelaufen", Toast.LENGTH_LONG).show();
-            recreate();
-        }
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+                Log.e(TAG, "Problem mit den Pickern");
+                Toast.makeText(AdminActivity.this, "Etwas ist schief gelaufen", Toast.LENGTH_LONG).show();
+                recreate();
+            }
+
     }
 
     /**
@@ -124,10 +129,11 @@ public class AdminActivity extends BaseActivity {
 
         if (networkInfo != null && networkInfo.isConnected()) {
 
-                title = (EditText) findViewById(R.id.admin_editText);
-                location = (EditText) findViewById(R.id.admin_editText2);
-                description = (EditText) findViewById(R.id.admin_editText3);
-                datePicker = (DatePicker) findViewById(R.id.admin_datePicker);
+
+            title = (EditText) findViewById(R.id.admin_editText);
+            location = (EditText) findViewById(R.id.admin_editText2);
+            description = (EditText) findViewById(R.id.admin_editText3);
+            datePicker = (DatePicker) findViewById(R.id.admin_datePicker);
 
                 if(title == null || location == null || description == null)Toast.makeText(AdminActivity.this, "Du musst alle Felder ausfüllen!", Toast.LENGTH_LONG).show();
 

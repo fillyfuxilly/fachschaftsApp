@@ -26,6 +26,7 @@
     <string name="menu_settings">Meine Einstellungen</string>
 
     <string name="settings_textView">Einstellungen</string>
+    <string name="settings_desc">Hier kannst du deine Gruppe wechseln, falls du dich verklickt haben solltest.</string>
 
 
     <string name="ok">OK</string>
@@ -33,6 +34,7 @@
     <string name="reg">Registrieren</string>
     <string name="d_name">Dein Name:</string>
     <string name="d_gruppe">Deine Gruppe:</string>
+    <string name="d_n_gruppe">Deine neue Gruppe:</string>
     <string name="reg_text">Registriere deinen Namen und deine Gruppe</string>
     <string name="welc1">Hallo und herzlich Willkommen zur Ersti-Helfer App der Fachschaft Wirtschaft!</string>
     <string name="welc2">Diese App soll euch beim Einstieg in das Studium helfen, indem wir euch Informationen zu eurer Erstsemestereinführung bereitstellen.</string>
@@ -47,6 +49,7 @@
     <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
     <string name="torminbruecke">Torminbruecke</string>
     <string name="google_play_icon">Google Play Icon</string>
+    <string name="settings_gruppe_wechseln">Gruppe wechseln</string>
 
 
 </resources>

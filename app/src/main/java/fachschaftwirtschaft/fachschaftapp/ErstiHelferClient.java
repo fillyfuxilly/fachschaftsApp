@@ -195,6 +195,46 @@ public abstract class ErstiHelferClient {
     }
 
     /**
+     * Kann nur als Admin ausgefuehrt werden.
+     * @param usernameOld Der bisherige Username.
+     * @param usernameNew Der neue Username.
+     * @return String, der ueber Ergbenis informiert.
+     */
+    public static String changeUsername(String usernameOld, String usernameNew) {
+
+        if(WEBSERVICEISAVAILABLE) {
+
+            String METHOD_NAME = "changeUsername";
+            SoapObject response = null;
+            String back = "Serverfehler";
+
+            try {
+
+                response = executeSoapAction(METHOD_NAME, usernameOld, usernameNew);
+
+            } catch (SoapFault e) {
+
+                e.printStackTrace();
+
+            }
+            try {
+
+                back = response.getPrimitivePropertyAsString("text");
+
+            } catch (NullPointerException e) {
+
+                e.printStackTrace();
+            }
+            return back;
+
+        } else {
+
+            return "Name erfolgreich geändert";
+        }
+    }
+
+
+    /**
      * Erlaubt es dem Nutzer seine Gruppe zu wechseln.
      * @param userName Name des Nutzers
      * @param groupNr Neue Gruppennummer des Nutzers
@@ -265,7 +305,7 @@ public abstract class ErstiHelferClient {
 
         } else {
 
-            return false;
+            return userName.equals("Admin");
         }
     }
 

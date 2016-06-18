@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 /** Zentrale Activity die Funktionalitaet fuer alle Activities, die von ihr erben, bereit stellt.
@@ -23,34 +24,22 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * Erstellt ein Menue.
-     * @param menu
-     * @return
+     * @param menu Ein Menue für Activities
+     * @return Nach erfolgreicher Erzeugung wird true ausgegeben.
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
 
-        MenuItem item = menu.findItem(R.id.admin);
 
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-        if (networkInfo != null && networkInfo.isConnected()) {
-            new AsyncIsAdmin().execute(getSharedPreferences("Registrierung", Context.MODE_PRIVATE).getString("nameKey", ""));
-
-            if (!checkIsAdmin) {
-
-                item.setVisible(false);
-            }
-        }
         return true;
     }
 
     /**
      * Definiert die Items des Menues.
-     * @param item
-     * @return
+     * @param item Die einzelnen Menueeintraege
+     * @return Nach starten der Activity wird true ausgegeben.
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -73,6 +62,32 @@ public abstract class BaseActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu)
+    {
+        MenuItem item = menu.findItem(R.id.admin);
+        MenuItem item2 = menu.findItem(R.id.register);
+        item.setVisible(false);
+        item2.setVisible(false);
+
+        String userName = getSharedPreferences("Registrierung", Context.MODE_PRIVATE).getString("nameKey", "");
+
+        if(userName.equals("")) item2.setVisible(true);
+
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+
+            new AsyncIsAdmin().execute(userName);
+
+            if (checkIsAdmin) item.setVisible(true);
+
+        }else Toast.makeText(this, "Verbindung zum Internet benötigt", Toast.LENGTH_LONG).show();
+
+
+        return true;
     }
 
     /**
