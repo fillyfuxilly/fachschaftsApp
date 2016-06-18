@@ -17,10 +17,11 @@ import static android.support.test.espresso.assertion.ViewAssertions.*;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
+import static android.support.test.espresso.intent.Intents.times;
 
 
 
-/**
+/** Instrumented Espresso Test für MainActivity.
  * @author Matthias Heinen
  */
 @RunWith(AndroidJUnit4.class)
@@ -34,7 +35,7 @@ public class MainActivityTest  {
 
 
     /**
-     * Sharedpreferences setzen, damit RegisterActivity nicht startet
+     * Sharedpreferences setzen, damit RegisterActivity nicht startet.
      */
     @Test
     public void test1Register() {
@@ -42,20 +43,20 @@ public class MainActivityTest  {
         SharedPreferences prefs = activity.getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("nameKey", "Matthias");
-        editor.putString("gruppeKey", "8");
+        editor.putString("groupKey", "8");
         editor.apply();
     }
 
     /**
-     * Auf Termine klicken und Activity wechseln
+     * Auf Termine klicken und zur AppointmentActivity wechseln. Nicht zur InfosActivity.
      */
     @Test
     public void test2ClickAppointmentsButton() {
         try {
             Intents.init();
             onView(withId(R.id.main_imageButton)).perform(click());
-            //onView(withId(R.id.imageButton)).check(doesNotExist());
-            intended(hasComponent(AppointmentsActivity.class.getName()));
+            intended(hasComponent(InfosActivity.class.getName()), times(0));
+            intended(hasComponent(AppointmentsActivity.class.getName()), times(1));
         } catch(Exception e){e.printStackTrace();}
         finally {
             Intents.release();
@@ -63,7 +64,7 @@ public class MainActivityTest  {
     }
 
     /**
-     * Auf Infos klicken und Activity wechseln
+     * Auf Infos klicken und Activity wechseln.
      */
     @Test
     public void test3ClickInfosButton() {
@@ -74,7 +75,7 @@ public class MainActivityTest  {
     }
 
     /**
-     * SharedPreferences zurücksetzen
+     * SharedPreferences zurücksetzen.
      */
     @Test
     public void test4ClearSharedPrefs() {

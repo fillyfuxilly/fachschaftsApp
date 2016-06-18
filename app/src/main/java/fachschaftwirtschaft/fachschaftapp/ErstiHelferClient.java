@@ -25,6 +25,7 @@ import webService.Appointment;
  * Steuert die Kommunikation mit einem Web Service
  * @author Matthias Heinen
  */
+@SuppressWarnings({"deprecation", "unchecked"})
 public abstract class ErstiHelferClient {
 
     /**

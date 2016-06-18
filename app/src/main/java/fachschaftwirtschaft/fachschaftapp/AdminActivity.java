@@ -22,6 +22,7 @@ import webService.Appointment;
  * Aktuell kann ein neuer Termin erstellt werden. Sobald der Server es zulaesst, wird um eine Funktionalitaet zum Senden von Nachrichten ergaenzt.
  * @author Matthias Heinen
  */
+@SuppressWarnings({"deprecation", "unchecked"})
 public class AdminActivity extends BaseActivity {
 
     /**

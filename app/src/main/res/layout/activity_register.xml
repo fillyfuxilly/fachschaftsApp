@@ -103,7 +103,8 @@
             android:id="@+id/numberPicker"
             android:layout_below="@+id/view"
             android:layout_toEndOf="@+id/button_r"
-            android:layout_marginStart="33dp" />
+            android:layout_marginStart="33dp"
+            android:orientation="horizontal" />
 
     </RelativeLayout>
 </ScrollView>

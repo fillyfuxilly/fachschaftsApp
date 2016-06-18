@@ -3,7 +3,7 @@ package webService;
 import java.util.GregorianCalendar;
 
 /**
- * Ein Objekt, dass als Termin beim WebService persistiert ist.
+ * POJO, dass als Termin beim WebService persistiert ist.
  * @author Matthias Heinen
  *
  */

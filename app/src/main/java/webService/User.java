@@ -2,7 +2,7 @@ package webService;
 
 import java.util.Collection;
 
-/** Ein Objekt, dass als Nutzer beim WebService persistiert ist.
+/** POJO, dass als Nutzer beim WebService persistiert ist.
  * @author Matthias Heinen
  */
 public class User {
