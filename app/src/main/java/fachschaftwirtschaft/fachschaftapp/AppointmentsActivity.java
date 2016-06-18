@@ -40,7 +40,7 @@ public class AppointmentsActivity extends BaseActivity {
             protected Boolean doInBackground(Void... params) {
                 try {
                     SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
-                    int group = Integer.parseInt(sharedpreferences.getString("gruppeKey", ""));
+                    int group = Integer.parseInt(sharedpreferences.getString("groupKey", ""));
 
                     Appointment[] a = ErstiHelferClient.getAppointments(5, group);
 
