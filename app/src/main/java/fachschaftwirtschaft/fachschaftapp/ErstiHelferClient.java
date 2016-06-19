@@ -39,7 +39,7 @@ public abstract class ErstiHelferClient {
     /**
      * URL des Web Service
      */
-    private static final String URL = "http://10.0.2.2:8080/erstihelfer/ErstiHelferOnlineIntegration";
+    private static final String URL = "http://10.60.64.42:8080/erstihelfer/ErstiHelferOnlineIntegration";
 
     /**
      * Speichert einen neuen Termin beim Web Service.
