@@ -20,7 +20,6 @@ import webService.Appointment;
  *
  * Zeigt die Termine in einer Liste an
  */
-
 public class AppointmentsActivity extends BaseActivity {
 
     Button backBtn;
