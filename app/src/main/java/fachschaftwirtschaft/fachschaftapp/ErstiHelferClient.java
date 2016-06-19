@@ -1,6 +1,8 @@
 package fachschaftwirtschaft.fachschaftapp;
 
 
+import android.util.Log;
+
 import org.ksoap2.HeaderProperty;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.SoapFault;
@@ -29,6 +31,10 @@ import webService.Appointment;
 public abstract class ErstiHelferClient {
 
     /**
+     * Konstante zum loggen
+     */
+    private static final String TAG = "ErstiHelferClient";
+    /**
      * Feature-Toggle fuer die Verfuegbarkeit des Web Service.
      */
     private static final boolean WEBSERVICEISAVAILABLE = false;
@@ -49,8 +55,11 @@ public abstract class ErstiHelferClient {
      */
     public static String createAppointment(Appointment appointment) {
 
+        Log.d(TAG, "crateAppointment gestartet");
+
         if (WEBSERVICEISAVAILABLE) {
 
+            Log.d(TAG, "Web Service verfügbar");
             String METHOD_NAME = "createAppointment";
             SoapObject response = null;
             String back = "Serverfehler";
@@ -70,6 +79,9 @@ public abstract class ErstiHelferClient {
 
                 back = response.getPrimitivePropertyAsString("text");
             }
+
+            Log.d(TAG, "crateAppointment abgeschlossen");
+
             return back;
 
         } else {
@@ -87,10 +99,13 @@ public abstract class ErstiHelferClient {
      */
     public static Appointment[] getAppointments(int count, int groupNr) {
 
-        Appointment[] appointments = new Appointment[5]; //Sorry, Matthias, musste ich hier deklarieren, weil das sonst mit meinen selbsterstellten Appointments nich klappt. W
+        Log.d(TAG, "getAppointments gestartet");
+
+        Appointment[] appointments = new Appointment[5];
 
         if (WEBSERVICEISAVAILABLE) {
 
+            Log.d(TAG, "Web Service verfügbar");
             String METHOD_NAME = "getAppointments";
             Vector<SoapObject> response = null;
 
@@ -150,7 +165,10 @@ public abstract class ErstiHelferClient {
             appointments[4] = new Appointment("Rundgang Bib und Erstitaschen", "Vor Raum A004", gc5, "Eure Gruppenleiter zeigen euch kurz ein paar wichtige Ecken des FH-Gebäudes und die Bib", 1);
 
         }
-            return appointments;
+
+        Log.d(TAG, "getAppointments abgeschlossen");
+
+        return appointments;
 
         }
 
@@ -163,8 +181,11 @@ public abstract class ErstiHelferClient {
      */
     public static String registerNewUser(String userName, int groupNr) {
 
+        Log.d(TAG, "registerNewUser gestartet");
+
         if(WEBSERVICEISAVAILABLE) {
 
+            Log.d(TAG, "Web Service verfügbar");
             String METHOD_NAME = "registerNewUser";
             SoapObject response = null;
             String back = "Serverfehler";
@@ -187,6 +208,8 @@ public abstract class ErstiHelferClient {
                 e.printStackTrace();
             }
 
+            Log.d(TAG, "registerNewUser abgeschlossen");
+
             return back;
 
         } else {
@@ -203,8 +226,11 @@ public abstract class ErstiHelferClient {
      */
     public static String changeUsername(String usernameOld, String usernameNew) {
 
+        Log.d(TAG, "changeUsername gestartet");
+
         if(WEBSERVICEISAVAILABLE) {
 
+            Log.d(TAG, "Web Service verfügbar");
             String METHOD_NAME = "changeUsername";
             SoapObject response = null;
             String back = "Serverfehler";
@@ -226,6 +252,9 @@ public abstract class ErstiHelferClient {
 
                 e.printStackTrace();
             }
+
+            Log.d(TAG, "changeUsername abgeschlossen");
+
             return back;
 
         } else {
@@ -243,8 +272,11 @@ public abstract class ErstiHelferClient {
      */
     public static String changeGroup(String userName, int groupNr) {
 
+        Log.d(TAG, "changeGroup gestartet");
+
         if(WEBSERVICEISAVAILABLE) {
 
+            Log.d(TAG, "Web Service verfügbar");
             String METHOD_NAME = "changeGroup";
             SoapObject response = null;
             String back = "Serverfehler";
@@ -266,6 +298,9 @@ public abstract class ErstiHelferClient {
 
                 e.printStackTrace();
             }
+
+            Log.d(TAG, "changeGroup abgeschlossen");
+
             return back;
 
         } else {
@@ -281,8 +316,11 @@ public abstract class ErstiHelferClient {
      */
     public static boolean isAdmin(String userName) {
 
+        Log.d(TAG, "isAdmin gestartet");
+
         if(WEBSERVICEISAVAILABLE) {
 
+            Log.d(TAG, "Web Service verfügbar");
             String METHOD_NAME = "changeGroup";
             SoapPrimitive response = null;
 
@@ -295,12 +333,16 @@ public abstract class ErstiHelferClient {
             }
             try {
 
+                Log.d(TAG, "isAdmin abgeschlossen");
+
                 return Boolean.parseBoolean(response.toString());
 
             } catch (NullPointerException e) {
 
                 e.printStackTrace();
             }
+
+            Log.d(TAG, "isAdmin abgeschlossen");
 
             return false;
 
@@ -318,6 +360,8 @@ public abstract class ErstiHelferClient {
      * @return SoapObject
      */
     private static SoapObject executeSoapAction(String methodName, Object... args) throws SoapFault {
+
+        Log.d(TAG, "executeSoapAction gestartet");
 
         Object result = null;
 
@@ -382,6 +426,8 @@ public abstract class ErstiHelferClient {
      */
     private static SoapPrimitive executeSoapActionPrimitive(String methodName, Object... args) throws SoapFault {
 
+        Log.d(TAG, "executeSoapActionPrimitive gestartet");
+
         Object result = null;
 
 	    /* Create a org.ksoap2.serialization.SoapObject object to build a SOAP request. Specify the namespace of the SOAP object and method
@@ -443,6 +489,8 @@ public abstract class ErstiHelferClient {
      * @return Vector<SoapObject>
      */
     private static Vector<SoapObject> executeSoapActionVector(String methodName, Object... args) throws SoapFault {
+
+        Log.d(TAG, "executeSoapActionVector gestartet");
 
         Object result = null;
 
