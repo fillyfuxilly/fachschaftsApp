@@ -128,7 +128,9 @@
             android:textSize="16sp"
             android:textAllCaps="false"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            android:textColor="#ffffff"
+            android:background="#20549f"/>
 
     </LinearLayout>
 

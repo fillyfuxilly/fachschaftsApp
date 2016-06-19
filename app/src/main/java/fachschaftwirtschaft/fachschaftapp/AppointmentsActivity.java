@@ -17,6 +17,8 @@ import webService.Appointment;
 
 /**
  * @author Wendy Frevert
+ *
+ * Zeigt die Termine in einer Liste an
  */
 
 public class AppointmentsActivity extends BaseActivity {
@@ -24,6 +26,7 @@ public class AppointmentsActivity extends BaseActivity {
     Button backBtn;
     ListView listView;
     String[] list= new String[5];
+    int count = 5;
     private static final String TAG = "AppointmentActivity";
 
     @Override
@@ -42,10 +45,15 @@ public class AppointmentsActivity extends BaseActivity {
                     SharedPreferences sharedpreferences = getSharedPreferences("Registrierung", Context.MODE_PRIVATE);
                     int group = Integer.parseInt(sharedpreferences.getString("groupKey", ""));
 
-                    Appointment[] a = ErstiHelferClient.getAppointments(5, group);
+                    /**Abrufen der Termine
+                     * Übergabe des Parameters int count für die Anzahl der Termine, die abgeholt werden sollen
+                     * und des Parameters int group, um die jeweilige Gruppe mitzugeben
+                     * */
+                    Appointment[] a = ErstiHelferClient.getAppointments(count, group);
 
                     for (int i = 0; i < a.length; i++) {
-                        /** Gregorian Calendar Minutes ist ein Integer, deshalb muss für die Darstellung der Zeit eine Null hinzugefügt werden, wenn der Wert < 10 ist.*/
+                        /** Gregorian Calendar Minutes ist ein Integer, deshalb muss für die Darstellung der Zeit eine Null hinzugefügt werden,
+                         * wenn der Wert < 10 ist.*/
                         String gcm;
 
                         if (a[i].getDate().getTime().getMinutes() < 10) {
@@ -70,7 +78,8 @@ public class AppointmentsActivity extends BaseActivity {
             protected void onPostExecute(Boolean result) {
                 if (result) {
                     Log.d(TAG, "Anzeigen der Termine");
-                    //Zugriff auf die ListView
+
+                    /** Zugriff auf die ListView über einen Adapter */
                     listView = (ListView) findViewById(R.id.listView);
 
                     ArrayAdapter<String> adapter =
@@ -82,6 +91,7 @@ public class AppointmentsActivity extends BaseActivity {
                 }
             }
         }
+
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
@@ -93,7 +103,7 @@ public class AppointmentsActivity extends BaseActivity {
         }
 
 
-        // Zurueck zur Startseite
+        /** Zurueck zur Startseite */
         backBtn = (Button) findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
 

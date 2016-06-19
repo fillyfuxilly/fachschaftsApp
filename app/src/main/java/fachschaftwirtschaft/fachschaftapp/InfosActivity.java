@@ -9,6 +9,8 @@ import android.widget.Button;
 
 /**
  *  @author Wendy Frevert
+ *
+ *  Zeigt Infos, Links zu nützlichen Apps sowie den Treffpunkt für die Aaseerallye
  */
 public class InfosActivity extends BaseActivity {
 

@@ -39,6 +39,8 @@
         android:textAllCaps="false"
         android:layout_gravity="start"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:background="#20549f"/>
 
 </RelativeLayout>
