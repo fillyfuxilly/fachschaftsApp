@@ -19,12 +19,13 @@
     <string name="admin_button">Speichern</string>
     <string name="admin_headline">Neuen Termin anlegen</string>
     <string name="admin_gruppe">Gruppe (0 für alle):</string>
+
     <string name="menu_admin">Administration</string>
     <string name="menu_register">Registrieren</string>
     <string name="menu_settings">Meine Einstellungen</string>
 
     <string name="settings_desc">Hier kannst du deine Gruppe wechseln, falls du dich verklickt haben solltest.</string>
-
+    <string name="change_username_desc">Hier kommt die Oberfläche zum Ändern eines Nutzernamens</string>
 
     <string name="reg">Registrieren</string>
     <string name="d_name">Dein Name:</string>
@@ -43,7 +44,4 @@
     <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
     <string name="torminbruecke">Torminbruecke</string>
     <string name="google_play_icon">Google Play Icon</string>
-    <string name="change_username_desc">Hier kommt die Oberfläche zum Ändern eines Nutzernamens</string>
-
-
 </resources>

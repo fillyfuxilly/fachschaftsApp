@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 /** Testet Appointment POJO
  * @author Matthias Heinen
  */
-public class AppointmentUserTest {
+public class AppointmentUnitTest {
 
     Appointment appointment;
     GregorianCalendar gc = new GregorianCalendar();
