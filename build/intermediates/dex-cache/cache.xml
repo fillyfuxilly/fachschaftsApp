@@ -1,2 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/matthias/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_4df8f1e0f425c223e7a71389162b5c03013daa73.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.4.0_734c82da31aba374d664994212031e35de1a9bbe.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.4.0_4abc1cf3f44e60c3e803917184b7892cc9a680d1.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/67ff45d9ae02e583d0f9b3432a5ebbe05c30c966/javawriter-2.1.1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="67ff45d9ae02e583d0f9b3432a5ebbe05c30c966">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/javawriter-2.1.1_2f3ece9bed98df53f37235b2ded346ef758a37d7.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-intents/2.2.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="efc9e293447db1929eb3853a3f83e8f46a957436">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-intents-2.2.2_b3ddf4f7b8abb4c7c3f5ed680a4160ad86984999.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/2.0.1/516c03b21d50a644d538de0f0369c620989cd8f0/jsr305-2.0.1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="516c03b21d50a644d538de0f0369c620989cd8f0">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/jsr305-2.0.1_6ef4b7698e898369e9de8d1ff8ad6580bcbc879d.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support.test/exposed-instrumentation-api-publish/0.5/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="905f3e63973d47fedf2d945fa31d8c0f0c98816e">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-exposed-instrumentation-api-publish-0.5_cb5fe5b6dd47b4a014d591a90f09b5965bb20a3d.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_1bbce65926cd6eeb9cd0f27bd61db848dbcebdd0.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-core/2.2.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d115b0e9e1501135fe91254ba884fcbd83d374c0">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-core-2.2.2_43cded95c130a3238ca00da538bd1ab00ae5d401.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/org.xmlpull/xmlpull/1.1.3.3/9b62254da05ce6399a09164362da7b2419de63ca/xmlpull-1.1.3.3.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="9b62254da05ce6399a09164362da7b2419de63ca">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/xmlpull-1.1.3.3_3d46286ef1d7ed24039590fe9d6584c4aa36902d.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/com.google.code.ksoap2-android/ksoap2-base/3.6.0/290baebc90b7b320ccb2adb2ed38d7838bc805a1/ksoap2-base-3.6.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="290baebc90b7b320ccb2adb2ed38d7838bc805a1">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/ksoap2-base-3.6.0_4044bd55bfc9f5823fa3521f9d5f7721dc03500c.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_1f139f942ce6b3de1c18689d2658ac777e05b35d.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/5de0c73fef18917cd85d0ab70bb23818685e4dfd/hamcrest-integration-1.3.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="5de0c73fef18917cd85d0ab70bb23818685e4dfd">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-integration-1.3_8319bb6adf324fcc26220d62dfc7fa5da2291d98.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_1aeceaad8a7c1aabcbcabbaaf9262650f34c4bfe.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/junit-4.12_8e395b42542f889c97ecf1e155a0772f20f75f42.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/net.sourceforge.kxml/kxml/2.2.4/1642506e490548d96984b8370e44257c156097f7/kxml-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1642506e490548d96984b8370e44257c156097f7">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/kxml-2.2.4_6c1033796d92dfb0cd30e2a3fd4dafb33cbffecc.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="7e11799d8a26bfa5d48acafe012ee5545b9bf468">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-rules-0.5_7ab33cf951e927258eefa85fed0412b2ef2bd377.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_a0d54939f4fc74c7356ec142f0758c2ba722ce0b.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/com.google.code.ksoap2-android/ksoap2-j2se/3.6.0/e4733a185d549446527620772469361756457052/ksoap2-j2se-3.6.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e4733a185d549446527620772469361756457052">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/ksoap2-j2se-3.6.0_e491fbf37cab83b1948190d91f2af296b5bd171b.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_9ed4fe28eee91abda9a3787642eb57f6424c40d6.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/net.sourceforge.kobjects/kobjects-j2me/0.0-SNAPSHOT-20040926-2/9246ca92b16c65114a7fb80b906801e06be95305/kobjects-j2me-0.0-SNAPSHOT-20040926-2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="9246ca92b16c65114a7fb80b906801e06be95305">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/kobjects-j2me-0.0-SNAPSHOT-20040926-2_b51ecbdbb539a07ddd0ce4e2410cccea306845b5.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/javax.inject-1_ee92b9db2c8f3cb4347d0645f6a18fa6c9578836.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_af19841ccb731e9af9a6e1d42643bf24b33793e5.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.4.0_b91e7297d29d27814f9f7f978ab58d2e9f41715e.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4785a3c21320980282f9f33d0d1264a69040538f">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-library-1.3_315b0e296c46f67a19d9689900d4148dc9c5d14b.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-core-1.3_35a5df21fb163768f5920294648011fb25acfdb5.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a890ee8445927649d9ed50f625a315d8758688be">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-idling-resource-2.2.2_a02b769e39a2f429e9c08ff12e55449df9f2dfe4.jar" />
+    </item>
+    <item
+        jar="/home/matthias/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="479c1e06db31c432330183f5cae684163f186146">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/javax.annotation-api-1.2_1e50f1561b16ba4918e7d308711a4f6f00b1ca96.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_8641cd3c07d0731bdec5bbb042d7bab3b160ad80.jar" />
+    </item>
+    <item
+        jar="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="796f9229948e907471c5595fbe94655ccf03ff73">
+        <dex dex="/home/matthias/projekte/fachschaftsApp/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-runner-0.5_66a626d7152ab8c1d99b2c7371aa338b57beab3b.jar" />
+    </item>
+
+</items>

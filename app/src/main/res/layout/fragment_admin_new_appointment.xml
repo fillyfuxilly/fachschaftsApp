@@ -163,7 +163,6 @@
                     android:paddingStart="10sp"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"
-                    android:onClick="newAppointment"
                     android:layout_gravity="center"
                     android:layout_marginStart="180dp"
                     android:clickable="true" />

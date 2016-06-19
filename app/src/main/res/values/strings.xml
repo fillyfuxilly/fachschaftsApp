@@ -43,6 +43,7 @@
     <string name="map2">Mit dem Bus 3 Richtung Schmeddingstraße | Bis Haltestelle Torminbrücke</string>
     <string name="torminbruecke">Torminbruecke</string>
     <string name="google_play_icon">Google Play Icon</string>
+    <string name="change_username_desc">Hier kommt die Oberfläche zum Ändern eines Nutzernamens</string>
 
 
 </resources>
