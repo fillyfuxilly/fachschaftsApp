@@ -18,7 +18,6 @@ import webService.Appointment;
 /**
  * @author Wendy Frevert
  */
-
 public class AppointmentsActivity extends BaseActivity {
 
     Button backBtn;
