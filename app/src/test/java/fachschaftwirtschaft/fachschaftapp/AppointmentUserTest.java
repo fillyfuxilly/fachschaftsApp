@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
 import webService.Appointment;
 import static org.junit.Assert.assertEquals;
 
-/** Tests Appointment POJO
+/** Testet Appointment POJO
  * @author Matthias Heinen
  */
 public class AppointmentUserTest {
@@ -15,11 +15,17 @@ public class AppointmentUserTest {
     Appointment appointment;
     GregorianCalendar gc = new GregorianCalendar();
 
+    /**
+     * Erstellt vor den Tests einen Termin
+     */
     @Before
     public void setUp() {
         appointment = new Appointment("Jenkins", "Im Internetz", gc, "Eine schlecht konfigurierte Lösung, die Studierende nerven soll", 0);
     }
 
+    /**
+     * Testet ob man einen bestehenden Termin korrekt veraendern kann.
+     */
     @Test
     public void manipulateAppointmentTest() {
 
@@ -46,6 +52,9 @@ public class AppointmentUserTest {
 
     }
 
+    /**
+     * Testtet ob ein Termin korrekt erstellt wird.
+     */
     @Test
     public void createAppointmentTest() {
 

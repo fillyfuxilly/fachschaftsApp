@@ -216,7 +216,8 @@
             android:textAllCaps="false"
             android:layout_gravity="start"
             android:layout_marginTop="20sp"
-            android:layout_columnSpan="2" />
+            android:layout_columnSpan="2"
+            android:visibility="invisible" />
 
     </GridLayout>
 

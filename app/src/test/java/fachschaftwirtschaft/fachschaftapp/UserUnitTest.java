@@ -5,19 +5,25 @@ import org.junit.Test;
 import webService.User;
 import static org.junit.Assert.assertEquals;
 
-/** Tests User POJO
+/** Testet User POJO
  * @author Matthias Heinen
  */
 public class UserUnitTest {
 
     User user2;
 
+    /**
+     * Erstellt vor den Tests einen User.
+     */
     @Before
     public void setUp() {
 
         user2 = new User("Hans", 10);
     }
 
+    /**
+     * Testet ob ein User korrekt erstellt wird.
+     */
     @Test
     public void createUserTest() {
 
@@ -27,6 +33,9 @@ public class UserUnitTest {
         assertEquals(user.isAdmin(), false);
     }
 
+    /**
+     * Testet, ob ein bestehender User korrekt manipuliert werden kann.
+     */
     @Test
     public void manipulateUserTest() {
 

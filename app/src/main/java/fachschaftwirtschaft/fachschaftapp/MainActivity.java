@@ -19,6 +19,13 @@ import android.widget.Toast;
  */
 public class MainActivity extends BaseActivity {
 
+    /**
+     * Feature Toggle um den Button zum loeschen der SharedPrefs zu zeigen (true)
+     */
+    private static final boolean ISDEMO = true;
+    /**
+     * Button zum loeschen der Shared Preferences. Ist nur eingebaut zum vorfuehren.
+     */
     Button btn;
     /**
      * Konstante zum loggen.
@@ -38,7 +45,10 @@ public class MainActivity extends BaseActivity {
         Log.d(TAG, "Layout geladen");
 
 
+
         btn = (Button) findViewById(R.id.main_button_clear);
+
+        if(ISDEMO)btn.setVisibility(View.VISIBLE);
 
         btn.setOnClickListener(new View.OnClickListener() {
 
