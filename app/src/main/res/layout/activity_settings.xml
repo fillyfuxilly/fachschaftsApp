@@ -90,28 +90,23 @@
             android:layout_marginStart="20dp"
             android:orientation="horizontal" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/admin_button"
-                android:drawableStart="@android:drawable/ic_menu_save"
-                android:id="@+id/settings_button"
-                android:background="#20549f"
-                android:paddingEnd="10sp"
-                android:paddingStart="10sp"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:layout_gravity="center"
-                android:layout_marginStart="80dp"
-                android:clickable="true"
-                android:visibility="visible" />
-        </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/admin_button"
+        android:drawableStart="@android:drawable/ic_menu_save"
+        android:id="@+id/settings_button"
+        android:background="#20549f"
+        android:paddingEnd="10sp"
+        android:paddingStart="10sp"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:clickable="true"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp" />
 
 </LinearLayout>
 
