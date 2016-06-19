@@ -7,10 +7,9 @@ import android.view.*;
 import android.widget.Button;
 
 
-/**
+/**  Zeigt Infos, Links zu nützlichen Apps sowie den Treffpunkt für die Aaseerallye
  *  @author Wendy Frevert
  *
- *  Zeigt Infos, Links zu nützlichen Apps sowie den Treffpunkt für die Aaseerallye
  */
 public class InfosActivity extends BaseActivity {
 

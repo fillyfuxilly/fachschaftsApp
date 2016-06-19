@@ -12,7 +12,7 @@ import static android.support.test.espresso.action.ViewActions.*;
 import static android.support.test.espresso.assertion.ViewAssertions.*;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
 
-/**
+/** Testet den button von Appointments
  * @Author Wendy Frevert
  */
 

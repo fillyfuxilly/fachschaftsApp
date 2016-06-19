@@ -15,10 +15,9 @@ import android.content.SharedPreferences;
 
 import webService.Appointment;
 
-/**
+/** Zeigt die Termine in einer Liste an
  * @author Wendy Frevert
  *
- * Zeigt die Termine in einer Liste an
  */
 public class AppointmentsActivity extends BaseActivity {
 
